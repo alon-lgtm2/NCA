@@ -1,0 +1,163 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "."
+public_folder: "."
+
+locale: en
+
+collections:
+  - name: "content"
+    label: "🌐 Site Content"
+    files:
+
+      - name: "english"
+        label: "🇬🇧 English"
+        file: "_data/en.json"
+        format: json
+        fields:
+          - { label: "Navigation – About",      name: "nav.about",      widget: string }
+          - { label: "Navigation – Catchball",   name: "nav.catchball",  widget: string }
+          - { label: "Navigation – Join",        name: "nav.join",       widget: string }
+          - { label: "Navigation – Contact",     name: "nav.contact",    widget: string }
+          - { label: "Hero – Subtitle",          name: "hero.subtitle",  widget: string }
+          - { label: "Hero – Button 1",          name: "hero.cta1",      widget: string }
+          - { label: "Hero – Button 2",          name: "hero.cta2",      widget: string }
+          - { label: "Stats – Founded (number)", name: "stats.s1n",      widget: string }
+          - { label: "Stats – Founded (label)",  name: "stats.s1l",      widget: string }
+          - { label: "Stats – Members (number)", name: "stats.s2n",      widget: string }
+          - { label: "Stats – Members (label)",  name: "stats.s2l",      widget: string }
+          - { label: "Stats – Nationwide (number)", name: "stats.s3n",   widget: string }
+          - { label: "Stats – Nationwide (label)",  name: "stats.s3l",   widget: string }
+          - { label: "About – Section tag",      name: "about.label",    widget: string }
+          - { label: "About – Title",            name: "about.title",    widget: string }
+          - { label: "About – Paragraph",        name: "about.text",     widget: text }
+          - { label: "About – Card headline",    name: "about.card.hl",  widget: string }
+          - { label: "About – Card subtitle",    name: "about.card.sub", widget: string }
+          - { label: "Catchball – Section tag",  name: "cb.label",       widget: string }
+          - { label: "Catchball – Title",        name: "cb.title",       widget: string }
+          - { label: "Catchball – Intro text",   name: "cb.text",        widget: text }
+          - { label: "Catchball – Card 1 title", name: "cb.c1t",         widget: string }
+          - { label: "Catchball – Card 1 text",  name: "cb.c1p",         widget: string }
+          - { label: "Catchball – Card 2 title", name: "cb.c2t",         widget: string }
+          - { label: "Catchball – Card 2 text",  name: "cb.c2p",         widget: string }
+          - { label: "Catchball – Card 3 title", name: "cb.c3t",         widget: string }
+          - { label: "Catchball – Card 3 text",  name: "cb.c3p",         widget: string }
+          - { label: "Catchball – Card 4 title", name: "cb.c4t",         widget: string }
+          - { label: "Catchball – Card 4 text",  name: "cb.c4p",         widget: string }
+          - { label: "Join – Section tag",       name: "join.label",     widget: string }
+          - { label: "Join – Title",             name: "join.title",     widget: string }
+          - { label: "Join – Paragraph",         name: "join.text",      widget: text }
+          - { label: "Join – Button",            name: "join.cta",       widget: string }
+          - { label: "Contact – Section tag",    name: "contact.label",  widget: string }
+          - { label: "Contact – Title",          name: "contact.title",  widget: string }
+          - { label: "Contact – Name placeholder",    name: "contact.name",       widget: string }
+          - { label: "Contact – Email placeholder",   name: "contact.email",      widget: string }
+          - { label: "Contact – Message placeholder", name: "contact.msg",        widget: string }
+          - { label: "Contact – Send button",    name: "contact.send",           widget: string }
+          - { label: "Contact – Info title",     name: "contact.info.title",     widget: string }
+          - { label: "Contact – Org label",      name: "contact.org.label",      widget: string }
+          - { label: "Contact – Org name",       name: "contact.org.name",       widget: string }
+          - { label: "Contact – Facebook page",  name: "contact.fb",             widget: string }
+          - { label: "Footer – Rights text",     name: "footer.rights",          widget: string }
+
+      - name: "hebrew"
+        label: "🇮🇱 עברית (Hebrew)"
+        file: "_data/he.json"
+        format: json
+        fields:
+          - { label: "ניווט – אודות",              name: "nav.about",          widget: string }
+          - { label: "ניווט – כדורשת",             name: "nav.catchball",      widget: string }
+          - { label: "ניווט – הצטרפי",             name: "nav.join",           widget: string }
+          - { label: "ניווט – צרי קשר",            name: "nav.contact",        widget: string }
+          - { label: "Hero – כותרת משנה",           name: "hero.subtitle",      widget: string }
+          - { label: "Hero – כפתור 1",              name: "hero.cta1",          widget: string }
+          - { label: "Hero – כפתור 2",              name: "hero.cta2",          widget: string }
+          - { label: "סטטיסטיקה – שנת ייסוד",      name: "stats.s1n",          widget: string }
+          - { label: "סטטיסטיקה – תווית ייסוד",    name: "stats.s1l",          widget: string }
+          - { label: "סטטיסטיקה – מספר חברות",     name: "stats.s2n",          widget: string }
+          - { label: "סטטיסטיקה – תווית חברות",    name: "stats.s2l",          widget: string }
+          - { label: "סטטיסטיקה – מספר ארצי",      name: "stats.s3n",          widget: string }
+          - { label: "סטטיסטיקה – תווית ארצית",    name: "stats.s3l",          widget: string }
+          - { label: "אודות – תגית",               name: "about.label",        widget: string }
+          - { label: "אודות – כותרת",              name: "about.title",        widget: string }
+          - { label: "אודות – פסקה",               name: "about.text",         widget: text }
+          - { label: "אודות – כרטיס כותרת",        name: "about.card.hl",      widget: string }
+          - { label: "אודות – כרטיס תת-כותרת",     name: "about.card.sub",     widget: string }
+          - { label: "כדורשת – תגית",              name: "cb.label",           widget: string }
+          - { label: "כדורשת – כותרת",             name: "cb.title",           widget: string }
+          - { label: "כדורשת – פסקה",              name: "cb.text",            widget: text }
+          - { label: "כדורשת – כרטיס 1 כותרת",    name: "cb.c1t",             widget: string }
+          - { label: "כדורשת – כרטיס 1 טקסט",     name: "cb.c1p",             widget: string }
+          - { label: "כדורשת – כרטיס 2 כותרת",    name: "cb.c2t",             widget: string }
+          - { label: "כדורשת – כרטיס 2 טקסט",     name: "cb.c2p",             widget: string }
+          - { label: "כדורשת – כרטיס 3 כותרת",    name: "cb.c3t",             widget: string }
+          - { label: "כדורשת – כרטיס 3 טקסט",     name: "cb.c3p",             widget: string }
+          - { label: "כדורשת – כרטיס 4 כותרת",    name: "cb.c4t",             widget: string }
+          - { label: "כדורשת – כרטיס 4 טקסט",     name: "cb.c4p",             widget: string }
+          - { label: "הצטרפי – תגית",              name: "join.label",         widget: string }
+          - { label: "הצטרפי – כותרת",             name: "join.title",         widget: string }
+          - { label: "הצטרפי – פסקה",              name: "join.text",          widget: text }
+          - { label: "הצטרפי – כפתור",             name: "join.cta",           widget: string }
+          - { label: "צרי קשר – תגית",             name: "contact.label",      widget: string }
+          - { label: "צרי קשר – כותרת",            name: "contact.title",      widget: string }
+          - { label: "צרי קשר – שם",               name: "contact.name",       widget: string }
+          - { label: "צרי קשר – אימייל",           name: "contact.email",      widget: string }
+          - { label: "צרי קשר – הודעה",            name: "contact.msg",        widget: string }
+          - { label: "צרי קשר – כפתור שלח",        name: "contact.send",       widget: string }
+          - { label: "צרי קשר – כותרת מידע",       name: "contact.info.title", widget: string }
+          - { label: "צרי קשר – תווית ארגון",      name: "contact.org.label",  widget: string }
+          - { label: "צרי קשר – שם ארגון",         name: "contact.org.name",   widget: string }
+          - { label: "צרי קשר – עמוד פייסבוק",    name: "contact.fb",         widget: string }
+          - { label: "פוטר – זכויות",              name: "footer.rights",      widget: string }
+
+      - name: "dutch"
+        label: "🇳🇱 Nederlands (Dutch)"
+        file: "_data/nl.json"
+        format: json
+        fields:
+          - { label: "Navigatie – Over ons",          name: "nav.about",          widget: string }
+          - { label: "Navigatie – Catchball",          name: "nav.catchball",      widget: string }
+          - { label: "Navigatie – Meedoen",            name: "nav.join",           widget: string }
+          - { label: "Navigatie – Contact",            name: "nav.contact",        widget: string }
+          - { label: "Hero – Ondertitel",              name: "hero.subtitle",      widget: string }
+          - { label: "Hero – Knop 1",                  name: "hero.cta1",          widget: string }
+          - { label: "Hero – Knop 2",                  name: "hero.cta2",          widget: string }
+          - { label: "Statistieken – Opgericht (nr)",  name: "stats.s1n",          widget: string }
+          - { label: "Statistieken – Opgericht (label)", name: "stats.s1l",        widget: string }
+          - { label: "Statistieken – Leden (nr)",      name: "stats.s2n",          widget: string }
+          - { label: "Statistieken – Leden (label)",   name: "stats.s2l",          widget: string }
+          - { label: "Statistieken – Landelijk (nr)",  name: "stats.s3n",          widget: string }
+          - { label: "Statistieken – Landelijk (label)", name: "stats.s3l",        widget: string }
+          - { label: "Over ons – Tag",                 name: "about.label",        widget: string }
+          - { label: "Over ons – Titel",               name: "about.title",        widget: string }
+          - { label: "Over ons – Tekst",               name: "about.text",         widget: text }
+          - { label: "Over ons – Kaart titel",         name: "about.card.hl",      widget: string }
+          - { label: "Over ons – Kaart subtitel",      name: "about.card.sub",     widget: string }
+          - { label: "Catchball – Tag",                name: "cb.label",           widget: string }
+          - { label: "Catchball – Titel",              name: "cb.title",           widget: string }
+          - { label: "Catchball – Tekst",              name: "cb.text",            widget: text }
+          - { label: "Catchball – Kaart 1 titel",      name: "cb.c1t",             widget: string }
+          - { label: "Catchball – Kaart 1 tekst",      name: "cb.c1p",             widget: string }
+          - { label: "Catchball – Kaart 2 titel",      name: "cb.c2t",             widget: string }
+          - { label: "Catchball – Kaart 2 tekst",      name: "cb.c2p",             widget: string }
+          - { label: "Catchball – Kaart 3 titel",      name: "cb.c3t",             widget: string }
+          - { label: "Catchball – Kaart 3 tekst",      name: "cb.c3p",             widget: string }
+          - { label: "Catchball – Kaart 4 titel",      name: "cb.c4t",             widget: string }
+          - { label: "Catchball – Kaart 4 tekst",      name: "cb.c4p",             widget: string }
+          - { label: "Meedoen – Tag",                  name: "join.label",         widget: string }
+          - { label: "Meedoen – Titel",                name: "join.title",         widget: string }
+          - { label: "Meedoen – Tekst",                name: "join.text",          widget: text }
+          - { label: "Meedoen – Knop",                 name: "join.cta",           widget: string }
+          - { label: "Contact – Tag",                  name: "contact.label",      widget: string }
+          - { label: "Contact – Titel",                name: "contact.title",      widget: string }
+          - { label: "Contact – Naam",                 name: "contact.name",       widget: string }
+          - { label: "Contact – E-mail",               name: "contact.email",      widget: string }
+          - { label: "Contact – Bericht",              name: "contact.msg",        widget: string }
+          - { label: "Contact – Verstuur knop",        name: "contact.send",       widget: string }
+          - { label: "Contact – Info titel",           name: "contact.info.title", widget: string }
+          - { label: "Contact – Org label",            name: "contact.org.label",  widget: string }
+          - { label: "Contact – Organisatienaam",      name: "contact.org.name",   widget: string }
+          - { label: "Contact – Facebook pagina",      name: "contact.fb",         widget: string }
+          - { label: "Footer – Rechten tekst",         name: "footer.rights",      widget: string }

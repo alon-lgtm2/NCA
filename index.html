@@ -457,107 +457,20 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
 </footer>
 
 <script>
-const T = {
-  en: {
-    dir:'ltr', lang:'en',
-    "nav.about":"About","nav.catchball":"Catchball","nav.join":"Join","nav.contact":"Contact",
-    "hero.badge":"Netherlands Catchball Association",
-    "hero.title":"PLAY.<br>CONNECT.<br><span class='stroke'>BELONG.</span>",
-    "hero.subtitle":"The official women's catchball association in the Netherlands",
-    "hero.cta1":"Join a Team","hero.cta2":"About the Sport",
-    "stats.s1n":"2019","stats.s1l":"Founded",
-    "stats.s2n":"119+","stats.s2l":"Members",
-    "stats.s3n":"NL","stats.s3l":"Nationwide",
-    "about.label":"Who We Are",
-    "about.title":"The Netherlands Catchball Association",
-    "about.text":"The Netherlands Catchball Association (NCA) is the official governing body for women's catchball in the Netherlands. Founded in December 2019, we connect women through sport, competition, and community — building a league that grows stronger every season.",
-    "about.card.hl":"Women's Catchball in the Netherlands","about.card.sub":"Official · Registered · Growing",
-    "cb.label":"The Sport","cb.title":"What is Catchball?",
-    "cb.text":"Catchball is a dynamic women's team sport combining volleyball and handball. Two teams of 6 compete across a net — passing, catching, no spiking needed. Accessible, competitive, and seriously fun.",
-    "cb.c1t":"Easy to Learn","cb.c1p":"Simple rules make catchball perfect for beginners and experienced athletes alike.",
-    "cb.c2t":"Team Sport","cb.c2p":"6 players per side — built on communication, teamwork, and trust.",
-    "cb.c3t":"For Every Woman","cb.c3p":"No age limit, no prior experience needed. Just bring your energy!",
-    "cb.c4t":"Social & Fun","cb.c4p":"Make lasting friendships on and off the court.",
-    "join.label":"Get Involved","join.title":"Ready to Play?",
-    "join.text":"Whether you're a seasoned athlete or picking up a ball for the first time, NCA welcomes you. Join our Facebook community to find a team near you or start a new one.",
-    "join.cta":"Join Our Facebook Group",
-    "contact.label":"Contact","contact.title":"Get in Touch",
-    "contact.name":"Your Name","contact.email":"Your Email","contact.msg":"Your Message","contact.send":"Send Message",
-    "contact.info.title":"Contact Information","contact.org.label":"Organization",
-    "contact.org.name":"The Netherlands Catchball Association (NCA)",
-    "contact.fb":"Netherlands Catchball Association",
-    "lang.label":"Language",
-    "footer.rights":"All rights reserved."
-  },
-  he: {
-    dir:'rtl', lang:'he',
-    "nav.about":"אודות","nav.catchball":"כדורשת","nav.join":"הצטרפי","nav.contact":"צרי קשר",
-    "hero.badge":"עמותת הכדורשת ההולנדית",
-    "hero.title":"שחקי.<br>התחברי.<br><span class='stroke'>שייכי.</span>",
-    "hero.subtitle":"עמותת הכדורשת הרשמית לנשים בהולנד",
-    "hero.cta1":"הצטרפי לקבוצה","hero.cta2":"על הספורט",
-    "stats.s1n":"2019","stats.s1l":"נוסדה",
-    "stats.s2n":"119+","stats.s2l":"חברות",
-    "stats.s3n":"NL","stats.s3l":"ארצית",
-    "about.label":"מי אנחנו",
-    "about.title":"עמותת הכדורשת ההולנדית",
-    "about.text":"עמותת הכדורשת ההולנדית (NCA) היא הגוף הרשמי לכדורשת נשים בהולנד. נוסדה בדצמבר 2019, אנחנו מחברות נשים דרך ספורט, תחרות וקהילה — ובונות ליגה שגדלה בכל עונה.",
-    "about.card.hl":"כדורשת נשים בהולנד","about.card.sub":"רשמי · רשום · גדל",
-    "cb.label":"הספורט","cb.title":"מה זה כדורשת?",
-    "cb.text":"כדורשת היא ספורט קבוצתי דינמי לנשים המשלב כדורעף וכדוריד. שתי קבוצות של 6 שחקניות מתחרות מעל רשת — מעבירות וקולטות, ללא שפיצות. נגיש, תחרותי ומהנה.",
-    "cb.c1t":"קל ללמוד","cb.c1p":"כללים פשוטים, מתאים למתחילות ולוותיקות.",
-    "cb.c2t":"ספורט קבוצתי","cb.c2p":"6 שחקניות לכל צד — תקשורת, עבודת צוות ואמון.",
-    "cb.c3t":"לכל אישה","cb.c3p":"ללא הגבלת גיל, ללא ניסיון קודם. פשוט תביאי אנרגיה!",
-    "cb.c4t":"חברתי ומהנה","cb.c4p":"יצירת חברויות לכל החיים בתוך ומחוץ למגרש.",
-    "join.label":"הצטרפי אלינו","join.title":"מוכנה לשחק?",
-    "join.text":"בין אם את ספורטאית מנוסה או מרימה כדור לראשונה, NCA מברכת אותך. הצטרפי לקהילת הפייסבוק שלנו ומצאי קבוצה קרוב אליך.",
-    "join.cta":"הצטרפי לקבוצת הפייסבוק שלנו",
-    "contact.label":"צרי קשר","contact.title":"בואי נדבר",
-    "contact.name":"שמך","contact.email":"האימייל שלך","contact.msg":"ההודעה שלך","contact.send":"שלחי הודעה",
-    "contact.info.title":"פרטי התקשרות","contact.org.label":"הארגון",
-    "contact.org.name":"עמותת הכדורשת ההולנדית (NCA)",
-    "contact.fb":"Netherlands Catchball Association",
-    "lang.label":"שפה",
-    "footer.rights":"כל הזכויות שמורות."
-  },
-  nl: {
-    dir:'ltr', lang:'nl',
-    "nav.about":"Over ons","nav.catchball":"Catchball","nav.join":"Meedoen","nav.contact":"Contact",
-    "hero.badge":"Netherlands Catchball Association",
-    "hero.title":"SPEEL.<br>VERBIND.<br><span class='stroke'>ERBIJ.</span>",
-    "hero.subtitle":"De officiële vrouwen catchball vereniging in Nederland",
-    "hero.cta1":"Sluit je aan","hero.cta2":"Over de sport",
-    "stats.s1n":"2019","stats.s1l":"Opgericht",
-    "stats.s2n":"119+","stats.s2l":"Leden",
-    "stats.s3n":"NL","stats.s3l":"Landelijk",
-    "about.label":"Wie zijn wij",
-    "about.title":"De Netherlands Catchball Association",
-    "about.text":"De Netherlands Catchball Association (NCA) is de officiële overkoepelende organisatie voor vrouwen catchball in Nederland. Opgericht in december 2019, verbinden wij vrouwen door sport, competitie en gemeenschap — en bouwen we aan een competitie die elke seizoen sterker wordt.",
-    "about.card.hl":"Vrouwen Catchball in Nederland","about.card.sub":"Officieel · Geregistreerd · Groeiend",
-    "cb.label":"De Sport","cb.title":"Wat is Catchball?",
-    "cb.text":"Catchball is een dynamische teamsport voor vrouwen. Twee teams van 6 strijden over een net — doorgeven en vangen, geen smashen nodig. Toegankelijk, competitief en serieus leuk.",
-    "cb.c1t":"Makkelijk te Leren","cb.c1p":"Eenvoudige regels, perfect voor beginners én ervaren atleten.",
-    "cb.c2t":"Teamsport","cb.c2p":"6 spelers per kant — communicatie, teamwork en vertrouwen.",
-    "cb.c3t":"Voor Elke Vrouw","cb.c3p":"Geen leeftijdsgrens, geen voorervaring. Breng je energie!",
-    "cb.c4t":"Sociaal & Leuk","cb.c4p":"Vriendschappen voor het leven, binnen en buiten het veld.",
-    "join.label":"Doe Mee","join.title":"Klaar om te Spelen?",
-    "join.text":"Of je nu een ervaren atleet bent of voor het eerst een bal oppakt, NCA verwelkomt je. Sluit je aan bij onze Facebook community om een team in de buurt te vinden.",
-    "join.cta":"Sluit je aan bij onze Facebook Groep",
-    "contact.label":"Contact","contact.title":"Neem Contact Op",
-    "contact.name":"Je Naam","contact.email":"Je E-mail","contact.msg":"Je Bericht","contact.send":"Verstuur Bericht",
-    "contact.info.title":"Contactgegevens","contact.org.label":"Organisatie",
-    "contact.org.name":"Netherlands Catchball Association (NCA)",
-    "contact.fb":"Netherlands Catchball Association",
-    "lang.label":"Taal",
-    "footer.rights":"Alle rechten voorbehouden."
-  }
-};
+const _dir = {en:'ltr', he:'rtl', nl:'ltr'};
+const _cache = {};
 
-function applyLang(l) {
-  const t = T[l];
+async function loadLang(l) {
+  if (_cache[l]) return _cache[l];
+  const r = await fetch('_data/' + l + '.json');
+  _cache[l] = await r.json();
+  return _cache[l];
+}
+
+function applyLang(l, t) {
   const root = document.getElementById('html-root');
-  root.setAttribute('dir', t.dir);
-  root.setAttribute('lang', t.lang);
+  root.setAttribute('dir', _dir[l] || 'ltr');
+  root.setAttribute('lang', l);
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const k = el.getAttribute('data-i18n');
     if (t[k] !== undefined) el.textContent = t[k];
@@ -571,11 +484,15 @@ function applyLang(l) {
     if (t[k] !== undefined) el.placeholder = t[k];
   });
 }
-function setLang(l, btn) {
-  applyLang(l);
+
+async function setLang(l, btn) {
+  const t = await loadLang(l);
+  applyLang(l, t);
   document.querySelectorAll('.lb').forEach(b => b.classList.remove('active'));
   if (btn) btn.classList.add('active');
 }
+
+loadLang('en').then(t => applyLang('en', t));
 
 window.addEventListener('scroll', () =>
   document.getElementById('nav').classList.toggle('sc', scrollY > 50)
