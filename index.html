@@ -25,9 +25,20 @@ html{scroll-behavior:smooth;}
 body{font-family:'Barlow','Heebo',sans-serif;color:var(--text);overflow-x:hidden;}
 [dir=rtl] body,[dir=rtl] *{font-family:'Heebo','Barlow',sans-serif;}
 
+/* ─── TOP BAR ─── */
+#top-bar {
+  position:fixed;top:0;width:100%;z-index:1001;
+  background:var(--coral);
+  height:38px;display:flex;align-items:center;justify-content:flex-end;
+  padding:0 52px;gap:6px;
+}
+.lb{padding:4px 14px;border:1.5px solid rgba(255,255,255,.35);background:transparent;color:rgba(255,255,255,.8);font-size:.75rem;font-weight:700;cursor:pointer;border-radius:3px;transition:.2s;letter-spacing:.5px;font-family:inherit;display:flex;align-items:center;gap:5px;}
+.lb.active{background:rgba(255,255,255,.25);color:#fff;border-color:rgba(255,255,255,.7);}
+.lb:hover:not(.active){color:#fff;border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.15);}
+
 /* ─── NAV ─── */
 nav {
-  position:fixed;top:0;width:100%;z-index:1000;
+  position:fixed;top:38px;width:100%;z-index:1000;
   background:rgba(10,10,10,.96);backdrop-filter:blur(16px);
   padding:0 52px;display:flex;align-items:center;justify-content:space-between;height:70px;
   border-bottom:2px solid var(--coral);
@@ -38,10 +49,6 @@ nav.sc{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 .nc{display:flex;list-style:none;gap:4px;}
 .nc a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.78rem;font-weight:700;letter-spacing:1.2px;padding:7px 14px;border-radius:4px;transition:.2s;text-transform:uppercase;}
 .nc a:hover{color:var(--white);background:rgba(255,45,72,.15);}
-.ls{display:flex;gap:4px;}
-.lb{padding:8px 18px;border:2px solid rgba(255,255,255,.25);background:transparent;color:rgba(255,255,255,.7);font-size:.85rem;font-weight:700;cursor:pointer;border-radius:4px;transition:.2s;letter-spacing:.5px;font-family:inherit;display:flex;align-items:center;gap:6px;}
-.lb.active{background:var(--coral);color:#fff;border-color:var(--coral);}
-.lb:hover:not(.active){color:var(--white);border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.1);}
 
 /* ─── HERO ─── */
 #hero {
@@ -53,7 +60,7 @@ nav.sc{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 .hbg-circle2{position:absolute;bottom:-140px;left:-100px;width:420px;height:420px;border-radius:50%;background:rgba(0,0,0,.1);pointer-events:none;}
 .hbg-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.15) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
 .hbg-line{position:absolute;bottom:0;left:0;right:0;height:90px;background:var(--white);clip-path:polygon(0 100%,100% 0,100% 100%);pointer-events:none;}
-.hi{position:relative;z-index:2;padding:140px 40px 120px;max-width:860px;text-align:center;}
+.hi{position:relative;z-index:2;padding:160px 40px 120px;max-width:860px;text-align:center;}
 .hbadge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:7px 18px;margin-bottom:32px;}
 .hbadge span{color:var(--white);font-size:.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;opacity:.9;}
 .htitle{font-family:'Barlow Condensed','Heebo',sans-serif;font-size:clamp(4.5rem,12vw,9.5rem);font-weight:900;color:var(--white);line-height:.92;margin-bottom:28px;text-transform:uppercase;letter-spacing:-2px;}
@@ -176,6 +183,13 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
 </head>
 <body>
 
+<!-- TOP BAR -->
+<div id="top-bar">
+  <button class="lb active" onclick="setLang('en',this)">🇬🇧 English</button>
+  <button class="lb"        onclick="setLang('he',this)">🇮🇱 עברית</button>
+  <button class="lb"        onclick="setLang('nl',this)">🇳🇱 Nederlands</button>
+</div>
+
 <!-- NAV -->
 <nav id="nav">
   <a href="#hero" class="nl">
@@ -187,11 +201,6 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
     <li><a href="#join"      data-i18n="nav.join">Join</a></li>
     <li><a href="#contact"   data-i18n="nav.contact">Contact</a></li>
   </ul>
-  <div class="ls">
-    <button class="lb active" onclick="setLang('en',this)">🇬🇧 English</button>
-    <button class="lb"        onclick="setLang('he',this)">🇮🇱 עברית</button>
-    <button class="lb"        onclick="setLang('nl',this)">🇳🇱 Nederlands</button>
-  </div>
 </nav>
 
 <!-- HERO -->
