@@ -39,16 +39,9 @@ nav.sc{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 .nc a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.78rem;font-weight:700;letter-spacing:1.2px;padding:7px 14px;border-radius:4px;transition:.2s;text-transform:uppercase;}
 .nc a:hover{color:var(--white);background:rgba(255,45,72,.15);}
 .ls{display:flex;gap:4px;}
-.lb{padding:7px 14px;border:2px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.6);font-size:.8rem;font-weight:700;cursor:pointer;border-radius:4px;transition:.2s;letter-spacing:.5px;font-family:inherit;display:flex;align-items:center;gap:5px;}
+.lb{padding:8px 18px;border:2px solid rgba(255,255,255,.25);background:transparent;color:rgba(255,255,255,.7);font-size:.85rem;font-weight:700;cursor:pointer;border-radius:4px;transition:.2s;letter-spacing:.5px;font-family:inherit;display:flex;align-items:center;gap:6px;}
 .lb.active{background:var(--coral);color:#fff;border-color:var(--coral);}
-.lb:hover:not(.active){color:var(--white);border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.08);}
-/* Language bar under hero */
-#lang-bar{background:var(--white);border-bottom:2px solid var(--brd);padding:0;}
-.lang-bar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;}
-.lang-bar-label{font-size:.72rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:2px;margin-right:8px;}
-.lbb{padding:9px 22px;border:2px solid var(--brd);background:transparent;color:var(--gray);font-size:.82rem;font-weight:700;cursor:pointer;border-radius:4px;transition:.2s;font-family:inherit;display:inline-flex;align-items:center;gap:7px;}
-.lbb.active{background:var(--coral);color:#fff;border-color:var(--coral);}
-.lbb:hover:not(.active){border-color:var(--coral);color:var(--coral);}
+.lb:hover:not(.active){color:var(--white);border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.1);}
 
 /* ─── HERO ─── */
 #hero {
@@ -195,9 +188,9 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
     <li><a href="#contact"   data-i18n="nav.contact">Contact</a></li>
   </ul>
   <div class="ls">
-    <button class="lb active" onclick="setLang('en',this)">🇬🇧 EN</button>
-    <button class="lb"        onclick="setLang('he',this)">🇮🇱 עב</button>
-    <button class="lb"        onclick="setLang('nl',this)">🇳🇱 NL</button>
+    <button class="lb active" onclick="setLang('en',this)">🇬🇧 English</button>
+    <button class="lb"        onclick="setLang('he',this)">🇮🇱 עברית</button>
+    <button class="lb"        onclick="setLang('nl',this)">🇳🇱 Nederlands</button>
   </div>
 </nav>
 
@@ -220,15 +213,6 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
   </div>
 </section>
 
-<!-- LANGUAGE BAR -->
-<section id="lang-bar">
-  <div class="lang-bar-inner">
-    <span class="lang-bar-label" data-i18n="lang.label">Language</span>
-    <button class="lbb active" onclick="setLangAll('en',this)">🇬🇧 English</button>
-    <button class="lbb"        onclick="setLangAll('he',this)">🇮🇱 עברית</button>
-    <button class="lbb"        onclick="setLangAll('nl',this)">🇳🇱 Nederlands</button>
-  </div>
-</section>
 
 <!-- STATS -->
 <section id="stats">
@@ -505,21 +489,6 @@ function setLang(l, btn) {
   applyLang(l);
   document.querySelectorAll('.lb').forEach(b => b.classList.remove('active'));
   if (btn) btn.classList.add('active');
-  // sync lang bar
-  document.querySelectorAll('.lbb').forEach(b => b.classList.remove('active'));
-  const idx = ['en','he','nl'].indexOf(l);
-  const lbbs = document.querySelectorAll('.lbb');
-  if (lbbs[idx]) lbbs[idx].classList.add('active');
-}
-function setLangAll(l, btn) {
-  applyLang(l);
-  document.querySelectorAll('.lbb').forEach(b => b.classList.remove('active'));
-  if (btn) btn.classList.add('active');
-  // sync nav
-  document.querySelectorAll('.lb').forEach(b => b.classList.remove('active'));
-  const idx = ['en','he','nl'].indexOf(l);
-  const lbs = document.querySelectorAll('.lb');
-  if (lbs[idx]) lbs[idx].classList.add('active');
 }
 
 window.addEventListener('scroll', () =>
