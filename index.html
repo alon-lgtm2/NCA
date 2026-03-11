@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The official women's catchball association in the Netherlands. Join a team, find a game, and connect with players nationwide.">
+<title>NCA – Netherlands Catchball Association</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600;700&family=Heebo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --coral:       #ff2d48;
+  --coral2:      #ff5265;
+  --coral-dark:  #d91e32;
+  --coral-light: #fff0f2;
+  --white:       #ffffff;
+  --off:         #f6f6f6;
+  --black:       #0a0a0a;
+  --dark:        #141414;
+  --gray:        #777;
+  --text:        #1a1a1a;
+  --brd:         #e8e8e8;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow','Heebo',sans-serif;color:var(--text);overflow-x:hidden;}
+[dir=rtl] body,[dir=rtl] *{font-family:'Heebo','Barlow',sans-serif;}
+
+/* ─── NAV ─── */
+nav {
+  position:fixed;top:0;width:100%;z-index:1000;
+  background:rgba(10,10,10,.96);backdrop-filter:blur(16px);
+  padding:0 52px;display:flex;align-items:center;justify-content:space-between;height:70px;
+  border-bottom:2px solid var(--coral);
+}
+nav.sc{box-shadow:0 4px 40px rgba(0,0,0,.5);}
+.nl{display:flex;align-items:center;text-decoration:none;}
+.nl img{height:42px;width:auto;object-fit:contain;}
+.nc{display:flex;list-style:none;gap:4px;}
+.nc a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.78rem;font-weight:700;letter-spacing:1.2px;padding:7px 14px;border-radius:4px;transition:.2s;text-transform:uppercase;}
+.nc a:hover{color:var(--white);background:rgba(255,45,72,.15);}
+.ls{display:flex;gap:2px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:3px;}
+.lb{padding:5px 11px;border:none;background:transparent;color:rgba(255,255,255,.45);font-size:.72rem;font-weight:700;cursor:pointer;border-radius:4px;transition:.2s;letter-spacing:.5px;font-family:inherit;}
+.lb.active{background:var(--coral);color:#fff;}
+.lb:hover:not(.active){color:var(--white);background:rgba(255,45,72,.2);}
+
+/* ─── HERO ─── */
+#hero {
+  min-height:100vh;background:var(--coral);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.hbg-circle1{position:absolute;top:-120px;right:-80px;width:560px;height:560px;border-radius:50%;background:rgba(255,255,255,.07);pointer-events:none;}
+.hbg-circle2{position:absolute;bottom:-140px;left:-100px;width:420px;height:420px;border-radius:50%;background:rgba(0,0,0,.1);pointer-events:none;}
+.hbg-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.15) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+.hbg-line{position:absolute;bottom:0;left:0;right:0;height:90px;background:var(--white);clip-path:polygon(0 100%,100% 0,100% 100%);pointer-events:none;}
+.hi{position:relative;z-index:2;padding:140px 40px 120px;max-width:860px;text-align:center;}
+.hbadge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:7px 18px;margin-bottom:32px;}
+.hbadge span{color:var(--white);font-size:.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;opacity:.9;}
+.htitle{font-family:'Barlow Condensed','Heebo',sans-serif;font-size:clamp(4.5rem,12vw,9.5rem);font-weight:900;color:var(--white);line-height:.92;margin-bottom:28px;text-transform:uppercase;letter-spacing:-2px;}
+.htitle .stroke{-webkit-text-stroke:2.5px rgba(255,255,255,.45);color:transparent;}
+.hsub{font-size:clamp(1rem,2vw,1.2rem);color:rgba(255,255,255,.75);margin-bottom:52px;line-height:1.7;max-width:480px;margin-left:auto;margin-right:auto;}
+.hctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--white);color:var(--coral);padding:16px 44px;text-decoration:none;font-weight:800;font-size:.88rem;letter-spacing:1.5px;text-transform:uppercase;transition:.3s;border:none;cursor:pointer;font-family:inherit;display:inline-block;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 100%,10px 100%);}
+.btn-primary:hover{background:var(--off);transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.2);}
+.btn-outline{background:transparent;color:var(--white);padding:16px 44px;text-decoration:none;font-weight:700;font-size:.88rem;letter-spacing:1.5px;text-transform:uppercase;transition:.3s;border:2px solid rgba(255,255,255,.5);cursor:pointer;font-family:inherit;display:inline-block;}
+.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.12);transform:translateY(-3px);}
+
+/* ─── STATS BAR ─── */
+#stats{background:var(--white);padding:0;border-bottom:2px solid var(--brd);}
+.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);}
+.stat{padding:44px 24px;text-align:center;border-right:2px solid var(--brd);position:relative;overflow:hidden;}
+.stat:last-child{border-right:none;}
+.stat-num{display:block;font-family:'Barlow Condensed','Heebo',sans-serif;font-size:clamp(3rem,6vw,4.5rem);font-weight:900;color:var(--coral);line-height:1;margin-bottom:6px;}
+.stat-label{font-size:.72rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:2px;}
+.stat::before{content:attr(data-n);position:absolute;right:-10px;top:50%;transform:translateY(-50%);font-family:'Barlow Condensed',sans-serif;font-size:6rem;font-weight:900;color:rgba(255,45,72,.04);pointer-events:none;line-height:1;}
+
+/* ─── ABOUT ─── */
+#about{background:var(--white);padding:110px 52px;}
+.inn{max-width:1100px;margin:0 auto;}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.sec-tag{display:inline-block;color:var(--coral);font-size:.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--coral);}
+.h2{font-family:'Barlow Condensed','Heebo',sans-serif;font-size:clamp(2.4rem,5vw,3.6rem);font-weight:900;line-height:1.05;color:var(--black);margin-bottom:20px;text-transform:uppercase;}
+.body-text{font-size:1rem;color:var(--gray);line-height:1.9;max-width:560px;}
+.acard{background:var(--coral);padding:52px 44px;position:relative;overflow:hidden;border-radius:2px;}
+.acard-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.12) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
+.acard-logo{position:relative;z-index:1;margin-bottom:28px;}
+.acard-logo img{height:60px;width:auto;object-fit:contain;filter:brightness(0) invert(1);}
+.acard-title{font-family:'Barlow Condensed','Heebo',sans-serif;font-size:1.8rem;font-weight:900;color:var(--white);margin-bottom:10px;text-transform:uppercase;position:relative;z-index:1;line-height:1.2;}
+.acard-sub{color:rgba(255,255,255,.7);font-size:.88rem;margin-bottom:28px;position:relative;z-index:1;}
+.acard-chip{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);color:var(--white);padding:7px 18px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;position:relative;z-index:1;}
+
+/* ─── CATCHBALL ─── */
+#catchball{background:var(--off);padding:110px 52px;}
+.cbh{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:60px;}
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.feat-card{background:var(--white);padding:36px 24px;text-align:center;border-top:4px solid var(--coral);transition:.35s;position:relative;overflow:hidden;}
+.feat-card:hover{transform:translateY(-8px);box-shadow:0 20px 48px rgba(255,45,72,.12);}
+.feat-card:hover .feat-icon-bg{opacity:1;}
+.feat-icon-bg{position:absolute;bottom:-20px;right:-10px;font-size:5rem;opacity:.04;transition:.35s;pointer-events:none;}
+.feat-icon{font-size:2.4rem;margin-bottom:18px;display:block;}
+.feat-card h3{font-family:'Barlow Condensed','Heebo',sans-serif;font-size:1.25rem;font-weight:900;color:var(--black);margin-bottom:10px;text-transform:uppercase;}
+.feat-card p{font-size:.84rem;color:var(--gray);line-height:1.7;}
+
+/* ─── JOIN ─── */
+#join{background:var(--black);padding:110px 52px;position:relative;overflow:hidden;}
+.join-accent-top{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--coral) 0%,transparent 60%);}
+.join-accent-bot{position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent 40%,var(--coral) 100%);}
+.join-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,45,72,.08) 0%,transparent 65%);pointer-events:none;}
+.jc{position:relative;z-index:2;text-align:center;max-width:680px;margin:0 auto;}
+.h2-white{color:var(--white);}
+.body-text-white{font-size:1rem;color:rgba(255,255,255,.6);line-height:1.9;max-width:520px;margin:0 auto 44px;}
+.btn-coral{display:inline-flex;align-items:center;gap:12px;background:var(--coral);color:#fff;padding:18px 48px;text-decoration:none;font-weight:700;font-size:.9rem;letter-spacing:1px;text-transform:uppercase;transition:.3s;font-family:inherit;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 100%,12px 100%);}
+.btn-coral:hover{background:var(--coral2);transform:translateY(-3px);box-shadow:0 14px 40px rgba(255,45,72,.5);}
+
+/* ─── CONTACT ─── */
+#contact{background:var(--white);padding:110px 52px;}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.contact-form{display:flex;flex-direction:column;gap:14px;}
+.contact-form input,.contact-form textarea{
+  padding:15px 18px;border:2px solid var(--brd);background:var(--off);
+  font-family:inherit;font-size:.92rem;color:var(--text);outline:none;transition:.25s;width:100%;border-radius:2px;
+}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--coral);background:var(--white);}
+.contact-form textarea{min-height:130px;resize:vertical;}
+.contact-form-title{font-family:'Barlow Condensed','Heebo',sans-serif;font-size:2rem;font-weight:900;color:var(--black);margin-bottom:24px;text-transform:uppercase;}
+.contact-info-item{display:flex;align-items:flex-start;gap:16px;padding:20px 0;border-bottom:1px solid var(--brd);}
+.contact-info-item:last-child{border-bottom:none;}
+.ci-dot{width:10px;height:10px;background:var(--coral);margin-top:5px;flex-shrink:0;border-radius:50%;}
+.ci-label{font-size:.7rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+.ci-val{font-size:.92rem;color:var(--text);font-weight:600;}
+.ci-val a{color:var(--text);text-decoration:none;}
+.ci-val a:hover{color:var(--coral);}
+[dir=rtl] .contact-info-item{flex-direction:row-reverse;}
+
+/* ─── FOOTER ─── */
+footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--coral);}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:22px;flex-wrap:wrap;gap:20px;}
+.footer-logo img{height:50px;width:auto;object-fit:contain;}
+.footer-nav{display:flex;gap:24px;flex-wrap:wrap;}
+.footer-nav a{color:rgba(255,255,255,.38);text-decoration:none;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;transition:.2s;}
+.footer-nav a:hover{color:var(--white);}
+.footer-social{display:flex;gap:10px;}
+.social-btn{width:40px;height:40px;border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:.25s;border-radius:2px;}
+.social-btn:hover{background:var(--coral);border-color:var(--coral);}
+.social-btn svg{width:16px;height:16px;fill:white;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-bottom p{color:rgba(255,255,255,.22);font-size:.75rem;}
+
+/* ─── RTL ─── */
+[dir=rtl] .ag,[dir=rtl] .cbh,[dir=rtl] .cg{direction:rtl;}
+[dir=rtl] .body-text{text-align:right;}
+[dir=rtl] .body-text-white{text-align:right;}
+
+/* ─── FADE IN ─── */
+.fade{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade.in{opacity:1;transform:none;}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:960px){
+  nav{padding:0 24px;}
+  .nc{display:none;}
+  .ag,.cbh,.cg{grid-template-columns:1fr;gap:44px;}
+  .feat-grid{grid-template-columns:repeat(2,1fr);}
+  #about,#catchball,#join,#contact{padding:70px 24px;}
+  footer{padding:44px 24px 22px;}
+}
+@media(max-width:600px){
+  .feat-grid{grid-template-columns:1fr;}
+  .stats-inner{grid-template-columns:1fr;}
+  .stat{border-right:none;border-bottom:2px solid var(--brd);}
+  .stat:last-child{border-bottom:none;}
+  .hctas{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nl">
+    <img src="ncalogo.png" alt="NCA">
+  </a>
+  <ul class="nc">
+    <li><a href="#about"     data-i18n="nav.about">About</a></li>
+    <li><a href="#catchball" data-i18n="nav.catchball">Catchball</a></li>
+    <li><a href="#join"      data-i18n="nav.join">Join</a></li>
+    <li><a href="#contact"   data-i18n="nav.contact">Contact</a></li>
+  </ul>
+  <div class="ls">
+    <button class="lb active" onclick="setLang('en',this)">EN</button>
+    <button class="lb"        onclick="setLang('he',this)">עב</button>
+    <button class="lb"        onclick="setLang('nl',this)">NL</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hbg-circle1"></div>
+  <div class="hbg-circle2"></div>
+  <div class="hbg-dots"></div>
+  <div class="hbg-line"></div>
+  <div class="hi">
+    <div class="hbadge">
+      <span data-i18n="hero.badge">Netherlands Catchball Association</span>
+    </div>
+    <h1 class="htitle" data-i18n-html="hero.title">PLAY.<br>CONNECT.<br><span class="stroke">BELONG.</span></h1>
+    <p class="hsub" data-i18n="hero.subtitle">The official women's catchball association in the Netherlands</p>
+    <div class="hctas">
+      <a href="#join"      class="btn-primary" data-i18n="hero.cta1">Join a Team</a>
+      <a href="#catchball" class="btn-outline"  data-i18n="hero.cta2">About the Sport</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="stats-inner">
+    <div class="stat" data-n="2019">
+      <span class="stat-num" data-i18n="stats.s1n">2019</span>
+      <span class="stat-label" data-i18n="stats.s1l">Founded</span>
+    </div>
+    <div class="stat" data-n="119+">
+      <span class="stat-num" data-i18n="stats.s2n">119+</span>
+      <span class="stat-label" data-i18n="stats.s2l">Members</span>
+    </div>
+    <div class="stat" data-n="NL">
+      <span class="stat-num" data-i18n="stats.s3n">NL</span>
+      <span class="stat-label" data-i18n="stats.s3l">Nationwide</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="inn">
+    <div class="ag">
+      <div class="fade">
+        <span class="sec-tag" data-i18n="about.label">Who We Are</span>
+        <h2 class="h2" data-i18n="about.title">The Netherlands Catchball Association</h2>
+        <p class="body-text" data-i18n="about.text">The Netherlands Catchball Association (NCA) is the official governing body for women's catchball in the Netherlands. Founded in December 2019, we connect women through sport, competition, and community — building a league that grows stronger every season.</p>
+      </div>
+      <div class="fade">
+        <div class="acard">
+          <div class="acard-dots"></div>
+          <div class="acard-logo"><img src="ncalogo.png" alt="NCA Logo"></div>
+          <div class="acard-title" data-i18n="about.card.hl">Women's Catchball in the Netherlands</div>
+          <div class="acard-sub" data-i18n="about.card.sub">Official · Registered · Growing</div>
+          <div class="acard-chip">KVK 96604751</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATCHBALL -->
+<section id="catchball">
+  <div class="inn">
+    <div class="cbh">
+      <div class="fade">
+        <span class="sec-tag" data-i18n="cb.label">The Sport</span>
+        <h2 class="h2" data-i18n="cb.title">What is Catchball?</h2>
+      </div>
+      <div class="fade">
+        <p class="body-text" data-i18n="cb.text">Catchball is a dynamic women's team sport combining volleyball and handball. Two teams of 6 compete across a net — passing, catching, no spiking needed. Accessible, competitive, and seriously fun.</p>
+      </div>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card fade">
+        <span class="feat-icon-bg">🎯</span>
+        <span class="feat-icon">🎯</span>
+        <h3 data-i18n="cb.c1t">Easy to Learn</h3>
+        <p data-i18n="cb.c1p">Simple rules make catchball perfect for beginners and experienced athletes alike.</p>
+      </div>
+      <div class="feat-card fade">
+        <span class="feat-icon-bg">🤝</span>
+        <span class="feat-icon">🤝</span>
+        <h3 data-i18n="cb.c2t">Team Sport</h3>
+        <p data-i18n="cb.c2p">6 players per side — built on communication, teamwork, and trust.</p>
+      </div>
+      <div class="feat-card fade">
+        <span class="feat-icon-bg">💪</span>
+        <span class="feat-icon">💪</span>
+        <h3 data-i18n="cb.c3t">For Every Woman</h3>
+        <p data-i18n="cb.c3p">No age limit, no prior experience needed. Just bring your energy!</p>
+      </div>
+      <div class="feat-card fade">
+        <span class="feat-icon-bg">🌟</span>
+        <span class="feat-icon">🌟</span>
+        <h3 data-i18n="cb.c4t">Social &amp; Fun</h3>
+        <p data-i18n="cb.c4p">Make lasting friendships on and off the court.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section id="join">
+  <div class="join-accent-top"></div>
+  <div class="join-accent-bot"></div>
+  <div class="join-glow"></div>
+  <div class="inn">
+    <div class="jc">
+      <span class="sec-tag" style="color:var(--coral2);border-color:var(--coral2);" data-i18n="join.label">Get Involved</span>
+      <h2 class="h2 h2-white" data-i18n="join.title">Ready to Play?</h2>
+      <p class="body-text-white" data-i18n="join.text">Whether you're a seasoned athlete or picking up a ball for the first time, NCA welcomes you. Join our Facebook community to find a team near you or start a new one.</p>
+      <a href="https://www.facebook.com/groups/2706988312693402/" target="_blank" class="btn-coral">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <span data-i18n="join.cta">Join Our Facebook Group</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="inn">
+    <div class="cg">
+      <div class="fade">
+        <span class="sec-tag" data-i18n="contact.label">Contact</span>
+        <h2 class="h2" data-i18n="contact.title">Get in Touch</h2>
+        <form class="contact-form" action="https://formspree.io/f/xkoqjege" method="POST">
+          <input type="text"  name="name"    data-ph="contact.name"  placeholder="Your Name"    required>
+          <input type="email" name="email"   data-ph="contact.email" placeholder="Your Email"   required>
+          <textarea           name="message" data-ph="contact.msg"   placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn-primary" style="clip-path:none;border:none;" data-i18n="contact.send">Send Message</button>
+        </form>
+      </div>
+      <div class="fade">
+        <div class="contact-form-title" data-i18n="contact.info.title">Contact Information</div>
+        <div class="contact-info-item">
+          <div class="ci-dot"></div>
+          <div><div class="ci-label" data-i18n="contact.org.label">Organization</div><div class="ci-val" data-i18n="contact.org.name">The Netherlands Catchball Association (NCA)</div></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-dot"></div>
+          <div><div class="ci-label">KVK</div><div class="ci-val">96604751</div></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-dot"></div>
+          <div><div class="ci-label">Facebook</div><div class="ci-val"><a href="https://www.facebook.com/groups/2706988312693402/" target="_blank" data-i18n="contact.fb">Netherlands Catchball Association</a></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo"><img src="ncalogo.png" alt="NCA"></div>
+      <nav class="footer-nav">
+        <a href="#about"     data-i18n="nav.about">About</a>
+        <a href="#catchball" data-i18n="nav.catchball">Catchball</a>
+        <a href="#join"      data-i18n="nav.join">Join</a>
+        <a href="#contact"   data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/groups/2706988312693402/" target="_blank" class="social-btn">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Netherlands Catchball Association (NCA). <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <p>KVK: 96604751</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const T = {
+  en: {
+    dir:'ltr', lang:'en',
+    "nav.about":"About","nav.catchball":"Catchball","nav.join":"Join","nav.contact":"Contact",
+    "hero.badge":"Netherlands Catchball Association",
+    "hero.title":"PLAY.<br>CONNECT.<br><span class='stroke'>BELONG.</span>",
+    "hero.subtitle":"The official women's catchball association in the Netherlands",
+    "hero.cta1":"Join a Team","hero.cta2":"About the Sport",
+    "stats.s1n":"2019","stats.s1l":"Founded",
+    "stats.s2n":"119+","stats.s2l":"Members",
+    "stats.s3n":"NL","stats.s3l":"Nationwide",
+    "about.label":"Who We Are",
+    "about.title":"The Netherlands Catchball Association",
+    "about.text":"The Netherlands Catchball Association (NCA) is the official governing body for women's catchball in the Netherlands. Founded in December 2019, we connect women through sport, competition, and community — building a league that grows stronger every season.",
+    "about.card.hl":"Women's Catchball in the Netherlands","about.card.sub":"Official · Registered · Growing",
+    "cb.label":"The Sport","cb.title":"What is Catchball?",
+    "cb.text":"Catchball is a dynamic women's team sport combining volleyball and handball. Two teams of 6 compete across a net — passing, catching, no spiking needed. Accessible, competitive, and seriously fun.",
+    "cb.c1t":"Easy to Learn","cb.c1p":"Simple rules make catchball perfect for beginners and experienced athletes alike.",
+    "cb.c2t":"Team Sport","cb.c2p":"6 players per side — built on communication, teamwork, and trust.",
+    "cb.c3t":"For Every Woman","cb.c3p":"No age limit, no prior experience needed. Just bring your energy!",
+    "cb.c4t":"Social & Fun","cb.c4p":"Make lasting friendships on and off the court.",
+    "join.label":"Get Involved","join.title":"Ready to Play?",
+    "join.text":"Whether you're a seasoned athlete or picking up a ball for the first time, NCA welcomes you. Join our Facebook community to find a team near you or start a new one.",
+    "join.cta":"Join Our Facebook Group",
+    "contact.label":"Contact","contact.title":"Get in Touch",
+    "contact.name":"Your Name","contact.email":"Your Email","contact.msg":"Your Message","contact.send":"Send Message",
+    "contact.info.title":"Contact Information","contact.org.label":"Organization",
+    "contact.org.name":"The Netherlands Catchball Association (NCA)",
+    "contact.fb":"Netherlands Catchball Association",
+    "footer.rights":"All rights reserved."
+  },
+  he: {
+    dir:'rtl', lang:'he',
+    "nav.about":"אודות","nav.catchball":"כדורשת","nav.join":"הצטרפי","nav.contact":"צרי קשר",
+    "hero.badge":"עמותת הכדורשת ההולנדית",
+    "hero.title":"שחקי.<br>התחברי.<br><span class='stroke'>שייכי.</span>",
+    "hero.subtitle":"עמותת הכדורשת הרשמית לנשים בהולנד",
+    "hero.cta1":"הצטרפי לקבוצה","hero.cta2":"על הספורט",
+    "stats.s1n":"2019","stats.s1l":"נוסדה",
+    "stats.s2n":"119+","stats.s2l":"חברות",
+    "stats.s3n":"NL","stats.s3l":"ארצית",
+    "about.label":"מי אנחנו",
+    "about.title":"עמותת הכדורשת ההולנדית",
+    "about.text":"עמותת הכדורשת ההולנדית (NCA) היא הגוף הרשמי לכדורשת נשים בהולנד. נוסדה בדצמבר 2019, אנחנו מחברות נשים דרך ספורט, תחרות וקהילה — ובונות ליגה שגדלה בכל עונה.",
+    "about.card.hl":"כדורשת נשים בהולנד","about.card.sub":"רשמי · רשום · גדל",
+    "cb.label":"הספורט","cb.title":"מה זה כדורשת?",
+    "cb.text":"כדורשת היא ספורט קבוצתי דינמי לנשים המשלב כדורעף וכדוריד. שתי קבוצות של 6 שחקניות מתחרות מעל רשת — מעבירות וקולטות, ללא שפיצות. נגיש, תחרותי ומהנה.",
+    "cb.c1t":"קל ללמוד","cb.c1p":"כללים פשוטים, מתאים למתחילות ולוותיקות.",
+    "cb.c2t":"ספורט קבוצתי","cb.c2p":"6 שחקניות לכל צד — תקשורת, עבודת צוות ואמון.",
+    "cb.c3t":"לכל אישה","cb.c3p":"ללא הגבלת גיל, ללא ניסיון קודם. פשוט תביאי אנרגיה!",
+    "cb.c4t":"חברתי ומהנה","cb.c4p":"יצירת חברויות לכל החיים בתוך ומחוץ למגרש.",
+    "join.label":"הצטרפי אלינו","join.title":"מוכנה לשחק?",
+    "join.text":"בין אם את ספורטאית מנוסה או מרימה כדור לראשונה, NCA מברכת אותך. הצטרפי לקהילת הפייסבוק שלנו ומצאי קבוצה קרוב אליך.",
+    "join.cta":"הצטרפי לקבוצת הפייסבוק שלנו",
+    "contact.label":"צרי קשר","contact.title":"בואי נדבר",
+    "contact.name":"שמך","contact.email":"האימייל שלך","contact.msg":"ההודעה שלך","contact.send":"שלחי הודעה",
+    "contact.info.title":"פרטי התקשרות","contact.org.label":"הארגון",
+    "contact.org.name":"עמותת הכדורשת ההולנדית (NCA)",
+    "contact.fb":"Netherlands Catchball Association",
+    "footer.rights":"כל הזכויות שמורות."
+  },
+  nl: {
+    dir:'ltr', lang:'nl',
+    "nav.about":"Over ons","nav.catchball":"Catchball","nav.join":"Meedoen","nav.contact":"Contact",
+    "hero.badge":"Netherlands Catchball Association",
+    "hero.title":"SPEEL.<br>VERBIND.<br><span class='stroke'>ERBIJ.</span>",
+    "hero.subtitle":"De officiële vrouwen catchball vereniging in Nederland",
+    "hero.cta1":"Sluit je aan","hero.cta2":"Over de sport",
+    "stats.s1n":"2019","stats.s1l":"Opgericht",
+    "stats.s2n":"119+","stats.s2l":"Leden",
+    "stats.s3n":"NL","stats.s3l":"Landelijk",
+    "about.label":"Wie zijn wij",
+    "about.title":"De Netherlands Catchball Association",
+    "about.text":"De Netherlands Catchball Association (NCA) is de officiële overkoepelende organisatie voor vrouwen catchball in Nederland. Opgericht in december 2019, verbinden wij vrouwen door sport, competitie en gemeenschap — en bouwen we aan een competitie die elke seizoen sterker wordt.",
+    "about.card.hl":"Vrouwen Catchball in Nederland","about.card.sub":"Officieel · Geregistreerd · Groeiend",
+    "cb.label":"De Sport","cb.title":"Wat is Catchball?",
+    "cb.text":"Catchball is een dynamische teamsport voor vrouwen. Twee teams van 6 strijden over een net — doorgeven en vangen, geen smashen nodig. Toegankelijk, competitief en serieus leuk.",
+    "cb.c1t":"Makkelijk te Leren","cb.c1p":"Eenvoudige regels, perfect voor beginners én ervaren atleten.",
+    "cb.c2t":"Teamsport","cb.c2p":"6 spelers per kant — communicatie, teamwork en vertrouwen.",
+    "cb.c3t":"Voor Elke Vrouw","cb.c3p":"Geen leeftijdsgrens, geen voorervaring. Breng je energie!",
+    "cb.c4t":"Sociaal & Leuk","cb.c4p":"Vriendschappen voor het leven, binnen en buiten het veld.",
+    "join.label":"Doe Mee","join.title":"Klaar om te Spelen?",
+    "join.text":"Of je nu een ervaren atleet bent of voor het eerst een bal oppakt, NCA verwelkomt je. Sluit je aan bij onze Facebook community om een team in de buurt te vinden.",
+    "join.cta":"Sluit je aan bij onze Facebook Groep",
+    "contact.label":"Contact","contact.title":"Neem Contact Op",
+    "contact.name":"Je Naam","contact.email":"Je E-mail","contact.msg":"Je Bericht","contact.send":"Verstuur Bericht",
+    "contact.info.title":"Contactgegevens","contact.org.label":"Organisatie",
+    "contact.org.name":"Netherlands Catchball Association (NCA)",
+    "contact.fb":"Netherlands Catchball Association",
+    "footer.rights":"Alle rechten voorbehouden."
+  }
+};
+
+function setLang(l, btn) {
+  const t = T[l];
+  const root = document.getElementById('html-root');
+  root.setAttribute('dir', t.dir);
+  root.setAttribute('lang', t.lang);
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n');
+    if (t[k] !== undefined) el.textContent = t[k];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const k = el.getAttribute('data-i18n-html');
+    if (t[k] !== undefined) el.innerHTML = t[k];
+  });
+  document.querySelectorAll('[data-ph]').forEach(el => {
+    const k = el.getAttribute('data-ph');
+    if (t[k] !== undefined) el.placeholder = t[k];
+  });
+  document.querySelectorAll('.lb').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+}
+
+window.addEventListener('scroll', () =>
+  document.getElementById('nav').classList.toggle('sc', scrollY > 50)
+);
+document.querySelectorAll('a[href^="#"]').forEach(a =>
+  a.addEventListener('click', function(e) {
+    const t = document.querySelector(this.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+  })
+);
+document.querySelectorAll('.fade').forEach(el =>
+  new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('in');
+  }), {threshold: .12}).observe(el)
+);
+</script>
+</body>
+</html>
