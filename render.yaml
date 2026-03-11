@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: nca-staging
+    env: static
+    branch: staging
+    buildCommand: ""
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache
