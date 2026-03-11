@@ -29,16 +29,26 @@ body{font-family:'Barlow','Heebo',sans-serif;color:var(--text);overflow-x:hidden
 #top-bar {
   position:fixed;top:0;width:100%;z-index:1001;
   background:var(--coral);
-  height:38px;display:flex;align-items:center;justify-content:flex-end;
+  height:52px;display:flex;align-items:center;justify-content:space-between;
   padding:0 52px;gap:6px;
 }
+#top-bar-logo{
+  display:flex;align-items:center;text-decoration:none;
+  height:42px;overflow:hidden;flex-shrink:0;
+}
+#top-bar-logo img{
+  height:42px;width:auto;
+  object-fit:cover;object-position:top center;
+  display:block;
+}
+.top-bar-langs{display:flex;gap:6px;align-items:center;}
 .lb{padding:4px 14px;border:1.5px solid rgba(255,255,255,.35);background:transparent;color:rgba(255,255,255,.8);font-size:.75rem;font-weight:700;cursor:pointer;border-radius:3px;transition:.2s;letter-spacing:.5px;font-family:inherit;display:flex;align-items:center;gap:5px;}
 .lb.active{background:rgba(255,255,255,.25);color:#fff;border-color:rgba(255,255,255,.7);}
 .lb:hover:not(.active){color:#fff;border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.15);}
 
 /* ─── NAV ─── */
 nav {
-  position:fixed;top:38px;width:100%;z-index:1000;
+  position:fixed;top:52px;width:100%;z-index:1000;
   background:rgba(10,10,10,.96);backdrop-filter:blur(16px);
   padding:0 52px;display:flex;align-items:center;justify-content:space-between;height:70px;
   border-bottom:2px solid var(--coral);
@@ -68,7 +78,7 @@ nav.sc{box-shadow:0 4px 40px rgba(0,0,0,.5);}
   background:var(--coral);
   display:flex;align-items:center;justify-content:center;
   position:relative;overflow:hidden;
-  padding-top:108px; /* top-bar(38) + nav(70) */
+  padding-top:122px; /* top-bar(52) + nav(70) */
 }
 /* Grain texture overlay */
 #hero::before {
@@ -249,9 +259,14 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
 
 <!-- TOP BAR -->
 <div id="top-bar">
-  <button class="lb active" onclick="setLang('en',this)">🇬🇧 English</button>
-  <button class="lb"        onclick="setLang('he',this)">🇮🇱 עברית</button>
-  <button class="lb"        onclick="setLang('nl',this)">🇳🇱 Nederlands</button>
+  <a href="#hero" id="top-bar-logo">
+    <img src="nca-logo-black.svg" alt="NCA">
+  </a>
+  <div class="top-bar-langs">
+    <button class="lb active" onclick="setLang('en',this)">🇬🇧 English</button>
+    <button class="lb"        onclick="setLang('he',this)">🇮🇱 עברית</button>
+    <button class="lb"        onclick="setLang('nl',this)">🇳🇱 Nederlands</button>
+  </div>
 </div>
 
 <!-- NAV -->
