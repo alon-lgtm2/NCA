@@ -51,26 +51,90 @@ nav.sc{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 .nc a:hover{color:var(--white);background:rgba(255,45,72,.15);}
 
 /* ─── HERO ─── */
+@keyframes heroLogoIn {
+  0%   { opacity:0; transform:scale(.88) translateY(30px); }
+  100% { opacity:1; transform:scale(1)   translateY(0);    }
+}
+@keyframes heroTextIn {
+  0%   { opacity:0; transform:translateY(24px); }
+  100% { opacity:1; transform:translateY(0);    }
+}
+@keyframes heroDividerIn {
+  0%   { width:0; }
+  100% { width:120px; }
+}
 #hero {
-  min-height:100vh;background:var(--coral);
+  min-height:100vh;
+  background:var(--coral);
   display:flex;align-items:center;justify-content:center;
   position:relative;overflow:hidden;
+  padding-top:108px; /* top-bar(38) + nav(70) */
 }
-.hbg-circle1{position:absolute;top:-120px;right:-80px;width:560px;height:560px;border-radius:50%;background:rgba(255,255,255,.07);pointer-events:none;}
-.hbg-circle2{position:absolute;bottom:-140px;left:-100px;width:420px;height:420px;border-radius:50%;background:rgba(0,0,0,.1);pointer-events:none;}
-.hbg-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.15) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
-.hbg-line{position:absolute;bottom:0;left:0;right:0;height:90px;background:var(--white);clip-path:polygon(0 100%,100% 0,100% 100%);pointer-events:none;}
-.hi{position:relative;z-index:2;padding:160px 40px 120px;max-width:860px;text-align:center;}
-.hbadge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:7px 18px;margin-bottom:32px;}
-.hbadge span{color:var(--white);font-size:.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;opacity:.9;}
-.htitle{font-family:'Barlow Condensed','Heebo',sans-serif;font-size:clamp(4.5rem,12vw,9.5rem);font-weight:900;color:var(--white);line-height:.92;margin-bottom:28px;text-transform:uppercase;letter-spacing:-2px;}
-.htitle .stroke{-webkit-text-stroke:2.5px rgba(255,255,255,.45);color:transparent;}
-.hsub{font-size:clamp(1rem,2vw,1.2rem);color:rgba(255,255,255,.75);margin-bottom:52px;line-height:1.7;max-width:480px;margin-left:auto;margin-right:auto;}
-.hctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+/* Grain texture overlay */
+#hero::before {
+  content:'';position:absolute;inset:0;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.07'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+  pointer-events:none;opacity:.45;
+}
+/* Radial vignette bottom */
+#hero::after {
+  content:'';position:absolute;bottom:0;left:0;right:0;height:45%;
+  background:linear-gradient(to bottom,transparent,rgba(180,10,28,.28));
+  pointer-events:none;z-index:0;
+}
+.hbg-line{position:absolute;bottom:0;left:0;right:0;height:90px;background:var(--white);clip-path:polygon(0 100%,100% 0,100% 100%);pointer-events:none;z-index:1;}
+/* Large diagonal accent stripe */
+.hbg-stripe{
+  position:absolute;top:-60px;right:-200px;
+  width:650px;height:130%;
+  background:rgba(255,255,255,.04);
+  transform:rotate(-14deg);
+  pointer-events:none;z-index:0;
+}
+.hi{
+  position:relative;z-index:2;
+  padding:60px 40px 140px;
+  max-width:780px;
+  text-align:center;
+  display:flex;flex-direction:column;align-items:center;
+}
+/* ── BIG LOGO ── */
+.hero-logo-wrap{
+  width:min(580px,82vw);
+  margin-bottom:44px;
+  animation:heroLogoIn .9s cubic-bezier(.22,1,.36,1) both;
+  filter:drop-shadow(0 32px 64px rgba(0,0,0,.22)) drop-shadow(0 8px 20px rgba(0,0,0,.18));
+}
+.hero-logo-wrap img{
+  width:100%;height:auto;display:block;
+  border-radius:4px;
+}
+/* ── DIVIDER ── */
+.hero-divider{
+  height:3px;background:rgba(255,255,255,.55);
+  border-radius:2px;
+  margin:0 auto 32px;
+  animation:heroDividerIn .7s .6s cubic-bezier(.22,1,.36,1) both;
+}
+.hsub{
+  font-size:clamp(.95rem,2vw,1.15rem);
+  color:rgba(255,255,255,.82);
+  margin-bottom:48px;line-height:1.75;
+  max-width:440px;
+  animation:heroTextIn .7s .75s cubic-bezier(.22,1,.36,1) both;
+  letter-spacing:.02em;
+}
+.hctas{
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+  animation:heroTextIn .7s .9s cubic-bezier(.22,1,.36,1) both;
+}
 .btn-primary{background:var(--white);color:var(--coral);padding:16px 44px;text-decoration:none;font-weight:800;font-size:.88rem;letter-spacing:1.5px;text-transform:uppercase;transition:.3s;border:none;cursor:pointer;font-family:inherit;display:inline-block;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 100%,10px 100%);}
-.btn-primary:hover{background:var(--off);transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.2);}
-.btn-outline{background:transparent;color:var(--white);padding:16px 44px;text-decoration:none;font-weight:700;font-size:.88rem;letter-spacing:1.5px;text-transform:uppercase;transition:.3s;border:2px solid rgba(255,255,255,.5);cursor:pointer;font-family:inherit;display:inline-block;}
-.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.12);transform:translateY(-3px);}
+.btn-primary:hover{background:var(--off);transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.25);}
+.btn-outline{background:transparent;color:var(--white);padding:16px 44px;text-decoration:none;font-weight:700;font-size:.88rem;letter-spacing:1.5px;text-transform:uppercase;transition:.3s;border:2px solid rgba(255,255,255,.55);cursor:pointer;font-family:inherit;display:inline-block;}
+.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.14);transform:translateY(-3px);}
+/* legacy classes kept for safety */
+.hbg-circle1,.hbg-circle2,.hbg-dots,.hbadge,.htitle{display:none;}
 
 /* ─── STATS BAR ─── */
 #stats{background:var(--white);padding:0;border-bottom:2px solid var(--brd);}
@@ -205,15 +269,13 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hbg-circle1"></div>
-  <div class="hbg-circle2"></div>
-  <div class="hbg-dots"></div>
+  <div class="hbg-stripe"></div>
   <div class="hbg-line"></div>
   <div class="hi">
-    <div class="hbadge">
-      <span data-i18n="hero.badge">Netherlands Catchball Association</span>
+    <div class="hero-logo-wrap">
+      <img src="nca-logo-pink.svg" alt="Netherlands Catchball Association">
     </div>
-    <h1 class="htitle" data-i18n-html="hero.title">PLAY.<br>CONNECT.<br><span class="stroke">BELONG.</span></h1>
+    <div class="hero-divider"></div>
     <p class="hsub" data-i18n="hero.subtitle">The official women's catchball association in the Netherlands</p>
     <div class="hctas">
       <a href="#join"      class="btn-primary" data-i18n="hero.cta1">Join a Team</a>
