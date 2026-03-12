@@ -29,17 +29,8 @@ body{font-family:'Barlow','Heebo',sans-serif;color:var(--text);overflow-x:hidden
 #top-bar {
   position:fixed;top:0;width:100%;z-index:1001;
   background:var(--coral);
-  height:52px;display:flex;align-items:center;justify-content:space-between;
+  height:52px;display:flex;align-items:center;justify-content:center;
   padding:0 52px;gap:6px;
-}
-#top-bar-logo{
-  display:flex;align-items:center;text-decoration:none;
-  height:42px;overflow:hidden;flex-shrink:0;
-}
-#top-bar-logo img{
-  height:42px;width:auto;
-  object-fit:cover;object-position:top center;
-  display:block;
 }
 .top-bar-langs{display:flex;gap:6px;align-items:center;}
 .lb{padding:4px 14px;border:1.5px solid rgba(255,255,255,.35);background:transparent;color:rgba(255,255,255,.8);font-size:.75rem;font-weight:700;cursor:pointer;border-radius:3px;transition:.2s;letter-spacing:.5px;font-family:inherit;display:flex;align-items:center;gap:5px;}
@@ -104,11 +95,13 @@ nav.sc{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 }
 .hi{
   position:relative;z-index:2;
-  padding:60px 40px 140px;
-  max-width:780px;
-  text-align:center;
-  display:flex;flex-direction:column;align-items:center;
+  padding:60px 52px 140px;
+  max-width:1100px;width:100%;
+  display:flex;flex-direction:row;align-items:center;gap:64px;
 }
+.hero-logo-side{flex:0 0 auto;width:min(420px,44vw);}
+.hero-logo-side img{width:100%;height:auto;display:block;border-radius:4px;}
+.hero-text-side{flex:1;text-align:start;}
 /* ── BIG LOGO ── */
 .hero-logo-wrap{
   width:min(580px,82vw);
@@ -124,7 +117,7 @@ nav.sc{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 .hero-divider{
   height:3px;background:rgba(255,255,255,.55);
   border-radius:2px;
-  margin:0 auto 32px;
+  margin:0 0 32px;
   animation:heroDividerIn .7s .6s cubic-bezier(.22,1,.36,1) both;
 }
 .hsub{
@@ -136,7 +129,7 @@ nav.sc{box-shadow:0 4px 40px rgba(0,0,0,.5);}
   letter-spacing:.02em;
 }
 .hctas{
-  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+  display:flex;gap:14px;justify-content:flex-start;flex-wrap:wrap;
   animation:heroTextIn .7s .9s cubic-bezier(.22,1,.36,1) both;
 }
 .btn-primary{background:var(--white);color:var(--coral);padding:16px 44px;text-decoration:none;font-weight:800;font-size:.88rem;letter-spacing:1.5px;text-transform:uppercase;transition:.3s;border:none;cursor:pointer;font-family:inherit;display:inline-block;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 100%,10px 100%);}
@@ -267,12 +260,18 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
   #about,#catchball,#join,#contact{padding:70px 24px;}
   footer{padding:44px 24px 22px;}
 }
+@media(max-width:768px){
+  .hi{flex-direction:column;gap:32px;padding:60px 24px 120px;text-align:center;}
+  .hero-logo-side{width:min(280px,70vw);}
+  .hero-text-side{text-align:center;}
+  .hero-divider{margin:0 auto 32px;}
+  .hctas{justify-content:center;}
+}
 @media(max-width:600px){
   .feat-grid{grid-template-columns:1fr;}
   .stats-inner{grid-template-columns:1fr;}
   .stat{border-right:none;border-bottom:2px solid var(--brd);}
   .stat:last-child{border-bottom:none;}
-  .hctas{flex-direction:column;align-items:center;}
 }
 </style>
 </head>
@@ -280,9 +279,6 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
 
 <!-- TOP BAR -->
 <div id="top-bar">
-  <a href="#hero" id="top-bar-logo">
-    <img src="nca-logo-black.svg" alt="NCA">
-  </a>
   <div class="top-bar-langs">
     <button class="lb active" onclick="setLang('en',this)">🇬🇧 English</button>
     <button class="lb"        onclick="setLang('he',this)">🇮🇱 עברית</button>
@@ -293,10 +289,8 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
 <!-- NAV -->
 <nav id="nav">
   <ul class="nc">
-    <li><a href="#about"     data-i18n="nav.about">About</a></li>
-    <li><a href="#catchball" data-i18n="nav.catchball">Catchball</a></li>
-    <li><a href="#join"      data-i18n="nav.join">Join</a></li>
-    <li><a href="#contact"   data-i18n="nav.contact">Contact</a></li>
+    <li><a href="#about"   data-i18n="nav.about">About</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -305,15 +299,17 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
   <div class="hbg-stripe"></div>
   <div class="hbg-line"></div>
   <div class="hi">
-    <h1 class="htitle" data-i18n-html="hero.title">PLAY.<br>CONNECT.<br><span class="stroke">BELONG.</span></h1>
-    <div class="hero-logo-wrap">
+    <div class="hero-logo-side">
       <img src="nca-logo-pink.svg" alt="Netherlands Catchball Association">
     </div>
-    <div class="hero-divider"></div>
-    <p class="hsub" data-i18n="hero.subtitle">The official women's catchball association in the Netherlands</p>
-    <div class="hctas">
-      <a href="#join"      class="btn-primary" data-i18n="hero.cta1">Join a Team</a>
-      <a href="#catchball" class="btn-outline"  data-i18n="hero.cta2">About the Sport</a>
+    <div class="hero-text-side">
+      <h1 class="htitle" data-i18n-html="hero.title">PLAY.<br>CONNECT.<br><span class="stroke">BELONG.</span></h1>
+      <div class="hero-divider"></div>
+      <p class="hsub" data-i18n="hero.subtitle">The official women's catchball association in the Netherlands</p>
+      <div class="hctas">
+        <a href="#join"      class="btn-primary" data-i18n="hero.cta1">Join a Team</a>
+        <a href="#catchball" class="btn-outline"  data-i18n="hero.cta2">About the Sport</a>
+      </div>
     </div>
   </div>
 </section>
