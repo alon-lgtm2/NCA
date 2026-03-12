@@ -33,7 +33,8 @@ body{font-family:'Barlow','Heebo',sans-serif;color:var(--text);overflow-x:hidden
   padding:0 52px;gap:6px;
 }
 .top-bar-langs{display:flex;gap:6px;align-items:center;}
-.lb{padding:4px 14px;border:1.5px solid rgba(255,255,255,.35);background:transparent;color:rgba(255,255,255,.8);font-size:.75rem;font-weight:700;cursor:pointer;border-radius:3px;transition:.2s;letter-spacing:.5px;font-family:inherit;display:flex;align-items:center;gap:5px;}
+.lb{padding:4px 14px;border:1.5px solid rgba(255,255,255,.35);background:transparent;color:rgba(255,255,255,.8);font-size:.75rem;font-weight:700;cursor:pointer;border-radius:3px;transition:.2s;letter-spacing:.5px;font-family:inherit;display:flex;align-items:center;gap:7px;}
+.lb img{display:block;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.3);flex-shrink:0;}
 .lb.active{background:rgba(255,255,255,.25);color:#fff;border-color:rgba(255,255,255,.7);}
 .lb:hover:not(.active){color:#fff;border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.15);}
 
@@ -280,9 +281,9 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
 <!-- TOP BAR -->
 <div id="top-bar">
   <div class="top-bar-langs">
-    <button class="lb active" onclick="setLang('en',this)">🇬🇧 English</button>
-    <button class="lb"        onclick="setLang('he',this)">🇮🇱 עברית</button>
-    <button class="lb"        onclick="setLang('nl',this)">🇳🇱 Nederlands</button>
+    <button class="lb active" onclick="setLang('en',this)"><img src="https://flagcdn.com/gb.svg" width="22" height="15" alt=""> English</button>
+    <button class="lb"        onclick="setLang('he',this)"><img src="https://flagcdn.com/il.svg" width="22" height="15" alt=""> עברית</button>
+    <button class="lb"        onclick="setLang('nl',this)"><img src="https://flagcdn.com/nl.svg" width="22" height="15" alt=""> Nederlands</button>
   </div>
 </div>
 
