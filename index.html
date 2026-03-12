@@ -143,8 +143,29 @@ nav.sc{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 .btn-primary:hover{background:var(--off);transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.25);}
 .btn-outline{background:transparent;color:var(--white);padding:16px 44px;text-decoration:none;font-weight:700;font-size:.88rem;letter-spacing:1.5px;text-transform:uppercase;transition:.3s;border:2px solid rgba(255,255,255,.55);cursor:pointer;font-family:inherit;display:inline-block;}
 .btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.14);transform:translateY(-3px);}
-/* legacy classes kept for safety */
-.hbg-circle1,.hbg-circle2,.hbg-dots,.hbadge,.htitle{display:none;}
+/* ── HERO TITLE ── */
+.htitle{
+  display:block;
+  font-size:clamp(3.2rem,11vw,6.8rem);
+  font-weight:900;
+  color:var(--white);
+  line-height:1.0;
+  letter-spacing:-1px;
+  text-transform:uppercase;
+  margin-bottom:36px;
+  animation:heroLogoIn .9s cubic-bezier(.22,1,.36,1) both;
+}
+.htitle .stroke{
+  -webkit-text-stroke:3px var(--white);
+  color:transparent;
+}
+.hero-logo-wrap{
+  width:min(200px,40vw);
+  margin-bottom:32px;
+  animation:heroLogoIn .9s .15s cubic-bezier(.22,1,.36,1) both;
+  filter:drop-shadow(0 8px 24px rgba(0,0,0,.2));
+}
+.hbg-circle1,.hbg-circle2,.hbg-dots,.hbadge{display:none;}
 
 /* ─── STATS BAR ─── */
 #stats{background:var(--white);padding:0;border-bottom:2px solid var(--brd);}
@@ -271,9 +292,6 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#hero" class="nl">
-    <img src="nca-logo-color.svg" alt="NCA">
-  </a>
   <ul class="nc">
     <li><a href="#about"     data-i18n="nav.about">About</a></li>
     <li><a href="#catchball" data-i18n="nav.catchball">Catchball</a></li>
@@ -287,6 +305,7 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
   <div class="hbg-stripe"></div>
   <div class="hbg-line"></div>
   <div class="hi">
+    <h1 class="htitle" data-i18n-html="hero.title">PLAY.<br>CONNECT.<br><span class="stroke">BELONG.</span></h1>
     <div class="hero-logo-wrap">
       <img src="nca-logo-pink.svg" alt="Netherlands Catchball Association">
     </div>
