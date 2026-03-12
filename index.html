@@ -247,6 +247,8 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
 [dir=rtl] .ag,[dir=rtl] .cbh,[dir=rtl] .cg{direction:rtl;}
 [dir=rtl] .body-text{text-align:right;}
 [dir=rtl] .body-text-white{text-align:right;}
+/* Hero: flip logo/text order for RTL so logo stays left */
+[dir=rtl] .hi{flex-direction:row-reverse;}
 
 /* ─── FADE IN ─── */
 .fade{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
@@ -262,7 +264,7 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
   footer{padding:44px 24px 22px;}
 }
 @media(max-width:768px){
-  .hi{flex-direction:column;gap:32px;padding:60px 24px 120px;text-align:center;}
+  .hi,[dir=rtl] .hi{flex-direction:column;gap:32px;padding:60px 24px 120px;text-align:center;}
   .hero-logo-side{width:min(280px,70vw);}
   .hero-text-side{text-align:center;}
   .hero-divider{margin:0 auto 32px;}
