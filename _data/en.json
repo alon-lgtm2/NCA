@@ -46,5 +46,8 @@
   "contact.org.name": "The Netherlands Catchball Association (NCA)",
   "contact.fb": "Netherlands Catchball Association",
   "lang.label": "Language",
-  "footer.rights": "All rights reserved."
+  "footer.rights": "All rights reserved.",
+  "cookie.text": "We use anonymous analytics to improve this site. No personal data is stored.",
+  "cookie.accept": "Accept",
+  "cookie.decline": "Decline"
 }

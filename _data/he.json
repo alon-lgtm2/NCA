@@ -46,5 +46,8 @@
   "contact.org.name": "עמותת הכדורשת ההולנדית (NCA)",
   "contact.fb": "Netherlands Catchball Association",
   "lang.label": "שפה",
-  "footer.rights": "כל הזכויות שמורות."
+  "footer.rights": "כל הזכויות שמורות.",
+  "cookie.text": "אנחנו משתמשות באנליטיקס אנונימי כדי לשפר את האתר. לא נשמרים נתונים אישיים.",
+  "cookie.accept": "אישור",
+  "cookie.decline": "דחייה"
 }

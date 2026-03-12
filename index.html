@@ -243,6 +243,27 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
 .footer-bottom p{color:rgba(255,255,255,.22);font-size:.75rem;}
 
+/* ─── COOKIE BANNER ─── */
+#cookie-banner{
+  position:fixed;bottom:0;left:0;right:0;z-index:9999;
+  background:rgba(10,10,10,.97);backdrop-filter:blur(16px);
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:18px 32px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  flex-wrap:wrap;
+  transform:translateY(100%);transition:transform .4s ease;
+}
+#cookie-banner.visible{transform:translateY(0);}
+.cb-text{color:rgba(255,255,255,.65);font-size:.82rem;line-height:1.6;flex:1;min-width:200px;}
+.cb-text a{color:var(--coral);text-decoration:underline;}
+.cb-btns{display:flex;gap:10px;flex-shrink:0;}
+.cb-accept{background:var(--coral);color:#fff;border:none;padding:10px 26px;font-family:inherit;font-size:.8rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;cursor:pointer;transition:.2s;}
+.cb-accept:hover{background:var(--coral2);}
+.cb-decline{background:transparent;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.2);padding:10px 20px;font-family:inherit;font-size:.8rem;font-weight:600;cursor:pointer;transition:.2s;letter-spacing:.5px;text-transform:uppercase;}
+.cb-decline:hover{color:#fff;border-color:rgba(255,255,255,.5);}
+[dir=rtl] #cookie-banner{flex-direction:row-reverse;}
+[dir=rtl] .cb-text{text-align:right;}
+
 /* ─── RTL ─── */
 [dir=rtl] .ag,[dir=rtl] .cbh,[dir=rtl] .cg{direction:rtl;}
 [dir=rtl] .body-text{text-align:right;}
@@ -477,6 +498,14 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
   </div>
 </footer>
 
+<div id="cookie-banner" role="region" aria-label="Cookie consent">
+  <p class="cb-text" data-i18n="cookie.text">We use anonymous analytics to improve this site. No personal data is stored.</p>
+  <div class="cb-btns">
+    <button class="cb-accept" data-i18n="cookie.accept" onclick="cookieChoice(true)">Accept</button>
+    <button class="cb-decline" data-i18n="cookie.decline" onclick="cookieChoice(false)">Decline</button>
+  </div>
+</div>
+
 <script>
 const _dir = {en:'ltr', he:'rtl', nl:'ltr'};
 const _cache = {};
@@ -529,6 +558,19 @@ document.querySelectorAll('.fade').forEach(el =>
     if (e.isIntersecting) e.target.classList.add('in');
   }), {threshold: .12}).observe(el)
 );
+
+// ─── Cookie banner ───
+function cookieChoice(accepted) {
+  localStorage.setItem('nca_cookie', accepted ? '1' : '0');
+  const b = document.getElementById('cookie-banner');
+  b.style.transition = 'transform .3s ease';
+  b.classList.remove('visible');
+}
+(function(){
+  if (!localStorage.getItem('nca_cookie')) {
+    setTimeout(() => document.getElementById('cookie-banner').classList.add('visible'), 900);
+  }
+})();
 </script>
 </body>
 </html>
