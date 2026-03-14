@@ -46,6 +46,21 @@ collections:
           - { label: "Catchball – Card 3 text",  name: "cb.c3p",         widget: string }
           - { label: "Catchball – Card 4 title", name: "cb.c4t",         widget: string }
           - { label: "Catchball – Card 4 text",  name: "cb.c4p",         widget: string }
+          - { label: "Rules – Section tag",      name: "cb.rules.label", widget: string }
+          - { label: "Rules – Title",            name: "cb.rules.title", widget: string }
+          - { label: "Rules – Intro text",       name: "cb.rules.text",  widget: text }
+          - { label: "Rules – Court title",      name: "cb.r1t",         widget: string }
+          - { label: "Rules – Court text",       name: "cb.r1p",         widget: text }
+          - { label: "Rules – Gameplay title",   name: "cb.r2t",         widget: string }
+          - { label: "Rules – Gameplay text",    name: "cb.r2p",         widget: text }
+          - { label: "Rules – Scoring title",    name: "cb.r3t",         widget: string }
+          - { label: "Rules – Scoring text",     name: "cb.r3p",         widget: text }
+          - { label: "Rules – Match title",      name: "cb.r4t",         widget: string }
+          - { label: "Rules – Match text",       name: "cb.r4p",         widget: text }
+          - { label: "Rules – Equipment title",  name: "cb.r5t",         widget: string }
+          - { label: "Rules – Equipment text",   name: "cb.r5p",         widget: text }
+          - { label: "Rules – Origins title",    name: "cb.r6t",         widget: string }
+          - { label: "Rules – Origins text",     name: "cb.r6p",         widget: text }
           - { label: "Join – Section tag",       name: "join.label",     widget: string }
           - { label: "Join – Title",             name: "join.title",     widget: string }
           - { label: "Join – Paragraph",         name: "join.text",      widget: text }
@@ -96,6 +111,21 @@ collections:
           - { label: "כדורשת – כרטיס 3 טקסט",     name: "cb.c3p",             widget: string }
           - { label: "כדורשת – כרטיס 4 כותרת",    name: "cb.c4t",             widget: string }
           - { label: "כדורשת – כרטיס 4 טקסט",     name: "cb.c4p",             widget: string }
+          - { label: "חוקים – תגית",               name: "cb.rules.label",     widget: string }
+          - { label: "חוקים – כותרת",              name: "cb.rules.title",     widget: string }
+          - { label: "חוקים – פסקה",               name: "cb.rules.text",      widget: text }
+          - { label: "חוקים – מגרש כותרת",         name: "cb.r1t",             widget: string }
+          - { label: "חוקים – מגרש טקסט",          name: "cb.r1p",             widget: text }
+          - { label: "חוקים – מהלך משחק כותרת",    name: "cb.r2t",             widget: string }
+          - { label: "חוקים – מהלך משחק טקסט",     name: "cb.r2p",             widget: text }
+          - { label: "חוקים – ניקוד כותרת",        name: "cb.r3t",             widget: string }
+          - { label: "חוקים – ניקוד טקסט",         name: "cb.r3p",             widget: text }
+          - { label: "חוקים – מבנה משחק כותרת",    name: "cb.r4t",             widget: string }
+          - { label: "חוקים – מבנה משחק טקסט",     name: "cb.r4p",             widget: text }
+          - { label: "חוקים – ציוד כותרת",         name: "cb.r5t",             widget: string }
+          - { label: "חוקים – ציוד טקסט",          name: "cb.r5p",             widget: text }
+          - { label: "חוקים – מקורות כותרת",       name: "cb.r6t",             widget: string }
+          - { label: "חוקים – מקורות טקסט",        name: "cb.r6p",             widget: text }
           - { label: "הצטרפי – תגית",              name: "join.label",         widget: string }
           - { label: "הצטרפי – כותרת",             name: "join.title",         widget: string }
           - { label: "הצטרפי – פסקה",              name: "join.text",          widget: text }
@@ -146,6 +176,21 @@ collections:
           - { label: "Catchball – Kaart 3 tekst",      name: "cb.c3p",             widget: string }
           - { label: "Catchball – Kaart 4 titel",      name: "cb.c4t",             widget: string }
           - { label: "Catchball – Kaart 4 tekst",      name: "cb.c4p",             widget: string }
+          - { label: "Regels – Tag",                   name: "cb.rules.label",     widget: string }
+          - { label: "Regels – Titel",                 name: "cb.rules.title",     widget: string }
+          - { label: "Regels – Tekst",                 name: "cb.rules.text",      widget: text }
+          - { label: "Regels – Veld titel",            name: "cb.r1t",             widget: string }
+          - { label: "Regels – Veld tekst",            name: "cb.r1p",             widget: text }
+          - { label: "Regels – Spelverloop titel",     name: "cb.r2t",             widget: string }
+          - { label: "Regels – Spelverloop tekst",     name: "cb.r2p",             widget: text }
+          - { label: "Regels – Punten titel",          name: "cb.r3t",             widget: string }
+          - { label: "Regels – Punten tekst",          name: "cb.r3p",             widget: text }
+          - { label: "Regels – Wedstrijd titel",       name: "cb.r4t",             widget: string }
+          - { label: "Regels – Wedstrijd tekst",       name: "cb.r4p",             widget: text }
+          - { label: "Regels – Uitrusting titel",      name: "cb.r5t",             widget: string }
+          - { label: "Regels – Uitrusting tekst",      name: "cb.r5p",             widget: text }
+          - { label: "Regels – Oorsprong titel",       name: "cb.r6t",             widget: string }
+          - { label: "Regels – Oorsprong tekst",       name: "cb.r6p",             widget: text }
           - { label: "Meedoen – Tag",                  name: "join.label",         widget: string }
           - { label: "Meedoen – Titel",                name: "join.title",         widget: string }
           - { label: "Meedoen – Tekst",                name: "join.text",          widget: text }

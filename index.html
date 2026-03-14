@@ -199,6 +199,24 @@ nav.sc{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 .feat-card h3{font-family:'Barlow Condensed','Heebo',sans-serif;font-size:1.25rem;font-weight:900;color:var(--black);margin-bottom:10px;text-transform:uppercase;}
 .feat-card p{font-size:.84rem;color:var(--gray);line-height:1.7;}
 
+/* ─── CATCHBALL RULES ─── */
+.cb-rules-header{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:48px;margin-top:80px;padding-top:60px;border-top:2px solid var(--brd);}
+.rules-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.rule-card{background:var(--white);padding:32px 28px;border-left:4px solid var(--coral);transition:.35s;position:relative;}
+.rule-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(196,25,74,.1);}
+.rule-num{display:inline-block;font-family:'Barlow Condensed','Heebo',sans-serif;font-size:2.2rem;font-weight:900;color:var(--coral);opacity:.2;position:absolute;top:12px;right:16px;line-height:1;}
+.rule-card h3{font-family:'Barlow Condensed','Heebo',sans-serif;font-size:1.15rem;font-weight:900;color:var(--black);margin-bottom:10px;text-transform:uppercase;}
+.rule-card p{font-size:.84rem;color:var(--gray);line-height:1.7;}
+[dir=rtl] .rule-card{border-left:none;border-right:4px solid var(--coral);}
+[dir=rtl] .rule-num{right:auto;left:16px;}
+@media(max-width:960px){
+  .cb-rules-header{grid-template-columns:1fr;gap:24px;}
+  .rules-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:600px){
+  .rules-grid{grid-template-columns:1fr;}
+}
+
 /* ─── JOIN ─── */
 #join{background:var(--black);padding:110px 52px;position:relative;overflow:hidden;}
 .join-accent-top{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--coral) 0%,transparent 60%);}
@@ -420,6 +438,49 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
         <span class="feat-icon">🌟</span>
         <h3 data-i18n="cb.c4t">Social &amp; Fun</h3>
         <p data-i18n="cb.c4p">Make lasting friendships on and off the court.</p>
+      </div>
+    </div>
+
+    <!-- RULES -->
+    <div class="cb-rules-header">
+      <div class="fade">
+        <span class="sec-tag" data-i18n="cb.rules.label">The Rules</span>
+        <h2 class="h2" data-i18n="cb.rules.title">How to Play Catchball</h2>
+      </div>
+      <div class="fade">
+        <p class="body-text" data-i18n="cb.rules.text">Catchball is played on a standard volleyball court with a net. The game combines elements of volleyball and handball, but instead of spiking, players throw and catch the ball. It's designed to be inclusive — no prior sports experience needed.</p>
+      </div>
+    </div>
+    <div class="rules-grid">
+      <div class="rule-card fade">
+        <span class="rule-num">01</span>
+        <h3 data-i18n="cb.r1t">The Court & Setup</h3>
+        <p data-i18n="cb.r1p">Played on a volleyball-sized court (18×9m) with a net at 2.15m height. Two teams of 6 players face each other across the net. Players rotate positions after winning a serve, just like in volleyball.</p>
+      </div>
+      <div class="rule-card fade">
+        <span class="rule-num">02</span>
+        <h3 data-i18n="cb.r2t">Gameplay</h3>
+        <p data-i18n="cb.r2p">The ball is served by throwing it over the net. The receiving team catches the ball and has up to 3 passes between teammates before throwing it back over the net. A player may hold the ball for a maximum of 3 seconds. No spiking or hitting — the ball must always be thrown and caught.</p>
+      </div>
+      <div class="rule-card fade">
+        <span class="rule-num">03</span>
+        <h3 data-i18n="cb.r3t">Scoring</h3>
+        <p data-i18n="cb.r3p">A point is scored when the ball touches the ground on the opponent's side, or when the opposing team commits a fault. Rally scoring is used — a point is awarded on every play regardless of which team served.</p>
+      </div>
+      <div class="rule-card fade">
+        <span class="rule-num">04</span>
+        <h3 data-i18n="cb.r4t">Match Format</h3>
+        <p data-i18n="cb.r4p">Sets are played to 25 points (win by 2). A match is typically best of 3 sets. If a deciding set is needed, it is played to 15 points (win by 2). Teams switch sides between sets.</p>
+      </div>
+      <div class="rule-card fade">
+        <span class="rule-num">05</span>
+        <h3 data-i18n="cb.r5t">Equipment</h3>
+        <p data-i18n="cb.r5p">All you need is a catchball (similar to a small volleyball), a net, and a court. Players wear comfortable sportswear and indoor/outdoor court shoes. No special protective gear needed.</p>
+      </div>
+      <div class="rule-card fade">
+        <span class="rule-num">06</span>
+        <h3 data-i18n="cb.r6t">Origins</h3>
+        <p data-i18n="cb.r6p">Catchball originated in Israel, where it became one of the most popular women's sports. The sport has since spread to communities across Europe and beyond, including the Netherlands, where the NCA was founded in 2019.</p>
       </div>
     </div>
   </div>
