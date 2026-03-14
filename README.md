@@ -72,11 +72,31 @@ Each JSON key maps to a `data-i18n` attribute in `index.html`. All three files m
 | Hero        | `#hero`      | Full-viewport coral section with logo, title "PLAY.CONNECT.BELONG.", subtitle, CTAs |
 | Stats       | `#stats`     | 3-column grid: Founded (2019), Members (119+), Nationwide (NL) |
 | About       | `#about`     | Two-column: text + branded card with KVK number |
-| Catchball   | `#catchball` | Sport explanation + 4 feature cards (Easy to Learn, Team Sport, For Every Woman, Social & Fun) |
+| Catchball   | `#catchball` | Sport explanation + 4 feature cards + "How to Play" rules section with 6 rule cards |
 | Join        | `#join`      | Dark CTA section linking to Facebook group |
 | Contact     | `#contact`   | Contact form (Formspree) + contact info (KVK, Facebook) |
 | Footer      | `footer`     | Logo, nav links, social (Facebook), copyright |
 | Cookie      | `#cookie-banner` | GDPR cookie consent banner (3 languages), localStorage-based |
+
+### Catchball Section Detail
+
+The `#catchball` section contains two sub-sections:
+
+1. **Sport Overview** — intro text + 4 feature cards:
+   - Easy to Learn (`cb.c1t`/`cb.c1p`)
+   - Team Sport (`cb.c2t`/`cb.c2p`)
+   - For Every Woman (`cb.c3t`/`cb.c3p`)
+   - Social & Fun (`cb.c4t`/`cb.c4p`)
+
+2. **How to Play** (rules) — intro text + 6 numbered rule cards:
+   - 01 The Court & Setup (`cb.r1t`/`cb.r1p`)
+   - 02 Gameplay (`cb.r2t`/`cb.r2p`)
+   - 03 Scoring (`cb.r3t`/`cb.r3p`)
+   - 04 Match Format (`cb.r4t`/`cb.r4p`)
+   - 05 Equipment (`cb.r5t`/`cb.r5p`)
+   - 06 Origins (`cb.r6t`/`cb.r6p`)
+
+Rule cards use a left-border accent (flipped to right-border in RTL) with faded numbering.
 
 ## Design System
 
