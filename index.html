@@ -5,6 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="The official women's catchball association in the Netherlands. Join a team, find a game, and connect with players nationwide.">
 <title>NCA – Netherlands Catchball Association</title>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Netherlands Catchball Association — Play. Connect. Belong.">
+<meta property="og:description" content="Join the fastest-growing women's sport in the Netherlands. No experience needed — just show up, catch the ball, and find your team.">
+<meta property="og:image" content="https://catchball.nl/oglogonca.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://catchball.nl/">
+<meta property="og:site_name" content="Netherlands Catchball Association">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Netherlands Catchball Association — Play. Connect. Belong.">
+<meta name="twitter:description" content="Join the fastest-growing women's sport in the Netherlands. No experience needed — just show up, catch the ball, and find your team.">
+<meta name="twitter:image" content="https://catchball.nl/oglogonca.png">
+<meta name="twitter:image:alt" content="Netherlands Catchball Association logo — woman catching a ball">
+
 <link rel="icon" type="image/png" href="faviconnca.png">
 <link rel="apple-touch-icon" href="faviconnca.png">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600;700&family=Heebo:wght@400;600;700;900&display=swap" rel="stylesheet">
@@ -227,6 +246,10 @@ nav.sc{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 .body-text-white{font-size:1rem;color:rgba(255,255,255,.6);line-height:1.9;max-width:520px;margin:0 auto 44px;}
 .btn-coral{display:inline-flex;align-items:center;gap:12px;background:var(--coral);color:#fff;padding:18px 48px;text-decoration:none;font-weight:700;font-size:.9rem;letter-spacing:1px;text-transform:uppercase;transition:.3s;font-family:inherit;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 100%,12px 100%);}
 .btn-coral:hover{background:var(--coral2);transform:translateY(-3px);box-shadow:0 14px 40px rgba(196,25,74,.45);}
+.join-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-fb{display:inline-flex;align-items:center;gap:12px;background:transparent;color:rgba(255,255,255,.7);padding:18px 48px;text-decoration:none;font-weight:700;font-size:.9rem;letter-spacing:1px;text-transform:uppercase;transition:.3s;font-family:inherit;border:2px solid rgba(255,255,255,.25);clip-path:polygon(0 0,calc(100% - 12px) 0,100% 100%,12px 100%);}
+.btn-fb:hover{color:#fff;border-color:rgba(255,255,255,.6);transform:translateY(-3px);background:rgba(255,255,255,.06);}
+.join-girls-note{font-weight:600;color:var(--coral2) !important;font-size:.95rem;margin-bottom:8px;}
 
 /* ─── CONTACT ─── */
 #contact{background:var(--white);padding:110px 52px;}
@@ -236,8 +259,27 @@ nav.sc{box-shadow:0 4px 40px rgba(0,0,0,.5);}
   padding:15px 18px;border:2px solid var(--brd);background:var(--off);
   font-family:inherit;font-size:.92rem;color:var(--text);outline:none;transition:.25s;width:100%;border-radius:2px;
 }
-.contact-form input:focus,.contact-form textarea:focus{border-color:var(--coral);background:var(--white);}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--coral);background:var(--white);}
 .contact-form textarea{min-height:130px;resize:vertical;}
+.phone-row{display:flex;gap:8px;}
+.phone-prefix{
+  padding:15px 10px;border:2px solid var(--brd);background:var(--off);
+  font-family:inherit;font-size:.92rem;color:var(--text);outline:none;transition:.25s;border-radius:2px;
+  cursor:pointer;flex-shrink:0;width:120px;
+}
+.phone-prefix:focus{border-color:var(--coral);background:var(--white);}
+.phone-row input[type="tel"]{flex:1;min-width:0;}
+.contact-form select{
+  padding:15px 18px;border:2px solid var(--brd);background:var(--off);
+  font-family:inherit;font-size:.92rem;color:var(--text);outline:none;transition:.25s;width:100%;border-radius:2px;
+  cursor:pointer;appearance:none;-webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23777' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 18px center;
+}
+[dir=rtl] .contact-form select{background-position:left 18px center;}
+.contact-form select option{color:var(--text);}
+.ci-girls-league .ci-dot{background:var(--coral2);animation:pulse-dot 2s infinite;}
+@keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(224,48,95,.4);}50%{box-shadow:0 0 0 6px rgba(224,48,95,0);}}
 .contact-form-title{font-family:'Barlow Condensed','Heebo',sans-serif;font-size:2rem;font-weight:900;color:var(--black);margin-bottom:24px;text-transform:uppercase;}
 .contact-info-item{display:flex;align-items:flex-start;gap:16px;padding:20px 0;border-bottom:1px solid var(--brd);}
 .contact-info-item:last-child{border-bottom:none;}
@@ -495,11 +537,18 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
     <div class="jc">
       <span class="sec-tag" style="color:var(--coral2);border-color:var(--coral2);" data-i18n="join.label">Get Involved</span>
       <h2 class="h2 h2-white" data-i18n="join.title">Ready to Play?</h2>
-      <p class="body-text-white" data-i18n="join.text">Whether you're a seasoned athlete or picking up a ball for the first time, NCA welcomes you. Join our Facebook community to find a team near you or start a new one.</p>
-      <a href="https://www.facebook.com/groups/2706988312693402/" target="_blank" class="btn-coral">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        <span data-i18n="join.cta">Join Our Facebook Group</span>
-      </a>
+      <p class="body-text-white" data-i18n="join.text">Whether you're a seasoned athlete or picking up a ball for the first time, NCA welcomes you. Fill out the form below to get started — we'd love to hear from you.</p>
+      <p class="body-text-white join-girls-note" data-i18n="join.girls">New: Girls league now open in Hoofddorp!</p>
+      <div class="join-ctas">
+        <a href="#contact" class="btn-coral">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <span data-i18n="join.cta">Contact Us to Join</span>
+        </a>
+        <a href="https://www.facebook.com/groups/2706988312693402/" target="_blank" class="btn-fb">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <span data-i18n="join.fb">Visit Our Facebook Community</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -514,6 +563,26 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
         <form class="contact-form" action="https://formspree.io/f/xkoqjege" method="POST">
           <input type="text"  name="name"    data-ph="contact.name"  placeholder="Your Name"    required>
           <input type="email" name="email"   data-ph="contact.email" placeholder="Your Email"   required>
+          <div class="phone-row">
+            <select name="phone_prefix" class="phone-prefix">
+              <option value="+31">🇳🇱 +31</option>
+              <option value="+972">🇮🇱 +972</option>
+              <option value="+32">🇧🇪 +32</option>
+              <option value="+49">🇩🇪 +49</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+33">🇫🇷 +33</option>
+              <option value="+1">🇺🇸 +1</option>
+            </select>
+            <input type="tel" name="phone" data-ph="contact.phone" placeholder="WhatsApp Number" pattern="[0-9\s\-]{6,15}">
+          </div>
+          <select name="subject" required data-i18n-select="contact.subject">
+            <option value="" disabled selected data-i18n="contact.subject.default">What is this about?</option>
+            <option value="joining" data-i18n="contact.subject.joining">Joining a Team</option>
+            <option value="girls-league" data-i18n="contact.subject.girls">Girls League (Hoofddorp)</option>
+            <option value="collaboration" data-i18n="contact.subject.collab">Collaboration</option>
+            <option value="partnership" data-i18n="contact.subject.partner">Partnerships & Sponsorship</option>
+            <option value="other" data-i18n="contact.subject.other">Other</option>
+          </select>
           <textarea           name="message" data-ph="contact.msg"   placeholder="Your Message" required></textarea>
           <button type="submit" class="btn-primary" style="clip-path:none;border:none;" data-i18n="contact.send">Send Message</button>
         </form>
@@ -531,6 +600,10 @@ footer{background:var(--dark);padding:52px 52px 28px;border-top:3px solid var(--
         <div class="contact-info-item">
           <div class="ci-dot"></div>
           <div><div class="ci-label">Facebook</div><div class="ci-val"><a href="https://www.facebook.com/groups/2706988312693402/" target="_blank" data-i18n="contact.fb">Netherlands Catchball Association</a></div></div>
+        </div>
+        <div class="contact-info-item ci-girls-league">
+          <div class="ci-dot"></div>
+          <div><div class="ci-label" data-i18n="contact.girls.label">New!</div><div class="ci-val" data-i18n="contact.girls.text">Girls league now open in Hoofddorp! Select "Girls League" above to learn more.</div></div>
         </div>
       </div>
     </div>
@@ -595,6 +668,10 @@ function applyLang(l, t) {
   document.querySelectorAll('[data-ph]').forEach(el => {
     const k = el.getAttribute('data-ph');
     if (t[k] !== undefined) el.placeholder = t[k];
+  });
+  document.querySelectorAll('select option[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n');
+    if (t[k] !== undefined) el.textContent = t[k];
   });
 }
 

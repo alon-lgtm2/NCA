@@ -25,6 +25,7 @@ Official website for the **Netherlands Catchball Association (NCA)**, the govern
 ├── render.yaml             # Render static site config (staging)
 ├── .nojekyll               # Disables GitHub Pages Jekyll processing
 ├── faviconnca.png          # Favicon (ball icon, raspberry background)
+├── oglogonca.png           # Open Graph social sharing image (1200×630)
 ├── nca-logo-black.svg      # Black logo (used on light backgrounds)
 ├── nca-logo-color.svg      # Color logo
 ├── nca-logo-pink.svg       # Pink logo variant
@@ -52,7 +53,7 @@ The site supports **3 languages** with a top-bar language switcher using country
 
 **How it works:**
 - Translation JSON files are fetched at runtime via `fetch()` and cached
-- HTML elements use `data-i18n` (text), `data-i18n-html` (innerHTML), and `data-ph` (placeholder) attributes
+- HTML elements use `data-i18n` (text), `data-i18n-html` (innerHTML), `data-ph` (placeholder), and `data-i18n-select` (select options) attributes
 - Language switch updates `dir` and `lang` attributes on `<html>` for RTL support
 - Hebrew layout flips the hero section via `[dir=rtl] .hi { flex-direction: row-reverse; }`
 
@@ -73,8 +74,8 @@ Each JSON key maps to a `data-i18n` attribute in `index.html`. All three files m
 | Stats       | `#stats`     | 3-column grid: Founded (2019), Members (119+), Nationwide (NL) |
 | About       | `#about`     | Two-column: text + branded card with KVK number |
 | Catchball   | `#catchball` | Sport explanation + 4 feature cards + "How to Play" rules section with 6 rule cards |
-| Join        | `#join`      | Dark CTA section linking to Facebook group |
-| Contact     | `#contact`   | Contact form (Formspree) + contact info (KVK, Facebook) |
+| Join        | `#join`      | Dark CTA section with contact + Facebook buttons, girls league note |
+| Contact     | `#contact`   | Contact form (Formspree) with subject dropdown, phone prefix, WhatsApp + contact info (KVK, Facebook, girls league) |
 | Footer      | `footer`     | Logo, nav links, social (Facebook), copyright |
 | Cookie      | `#cookie-banner` | GDPR cookie consent banner (3 languages), localStorage-based |
 
@@ -125,6 +126,15 @@ Rule cards use a left-border accent (flipped to right-border in RTL) with faded 
 - Angled bottom edge (`clip-path`)
 - Scroll-triggered fade-in animations (`IntersectionObserver`)
 - Navbar shadow on scroll
+
+## Social / OG Meta
+
+The site includes Open Graph and Twitter Card meta tags for rich link previews:
+
+- **OG Image:** `oglogonca.png` (player silhouette logo, 1200×630)
+- **Title:** "Netherlands Catchball Association — Play. Connect. Belong."
+- **Description:** "Join the fastest-growing women's sport in the Netherlands..."
+- **Twitter Card:** `summary_large_image` with alt text
 
 ## Cookie Consent (GDPR)
 
