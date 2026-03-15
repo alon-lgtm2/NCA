@@ -7,14 +7,14 @@ Official website for the **Netherlands Catchball Association (NCA)**, the govern
 | Environment | Branch    | Host    | URL |
 |-------------|-----------|---------|-----|
 | Production  | `main`    | Netlify | Deployed via Netlify (`netlify.toml`) |
-| Staging     | `staging` | Render  | Deployed via Render (`render.yaml`) — `noindex` headers enabled |
+| Staging     | `staging` | Render  | Deployed via Render (`render.yaml`)  - `noindex` headers enabled |
 
 ## Tech Stack
 
-- **Pure HTML / CSS / JS** — single-page, no build step, no framework
-- **Decap CMS** (formerly Netlify CMS) — content editing at `/admin`
-- **Formspree** — contact form submissions (`https://formspree.io/f/xkoqjege`)
-- **Google Fonts** — Barlow Condensed, Barlow, Heebo (for Hebrew)
+- **Pure HTML / CSS / JS**  - single-page, no build step, no framework
+- **Decap CMS** (formerly Netlify CMS)  - content editing at `/admin`
+- **Formspree**  - contact form submissions (`https://formspree.io/f/xkoqjege`)
+- **Google Fonts**  - Barlow Condensed, Barlow, Heebo (for Hebrew)
 
 ## Project Structure
 
@@ -83,13 +83,13 @@ Each JSON key maps to a `data-i18n` attribute in `index.html`. All three files m
 
 The `#catchball` section contains two sub-sections:
 
-1. **Sport Overview** — intro text + 4 feature cards:
+1. **Sport Overview**  - intro text + 4 feature cards:
    - Easy to Learn (`cb.c1t`/`cb.c1p`)
    - Team Sport (`cb.c2t`/`cb.c2p`)
    - For Every Woman (`cb.c3t`/`cb.c3p`)
    - Social & Fun (`cb.c4t`/`cb.c4p`)
 
-2. **How to Play** (rules) — intro text + 6 numbered rule cards:
+2. **How to Play** (rules)  - intro text + 6 numbered rule cards:
    - 01 The Court & Setup (`cb.r1t`/`cb.r1p`)
    - 02 Gameplay (`cb.r2t`/`cb.r2p`)
    - 03 Scoring (`cb.r3t`/`cb.r3p`)
@@ -101,7 +101,7 @@ Rule cards use a left-border accent (flipped to right-border in RTL) with faded 
 
 ## Design System
 
-### Color Palette — "Warm Raspberry"
+### Color Palette  - "Warm Raspberry"
 
 | Variable        | Value     | Usage |
 |-----------------|-----------|-------|
@@ -132,7 +132,7 @@ Rule cards use a left-border accent (flipped to right-border in RTL) with faded 
 The site includes Open Graph and Twitter Card meta tags for rich link previews:
 
 - **OG Image:** `oglogonca.png` (player silhouette logo, 1200×630)
-- **Title:** "Netherlands Catchball Association — Play. Connect. Belong."
+- **Title:** "Netherlands Catchball Association  - Play. Connect. Belong."
 - **Description:** "Join the fastest-growing women's sport in the Netherlands..."
 - **Twitter Card:** `summary_large_image` with alt text
 
