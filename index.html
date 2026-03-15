@@ -42,7 +42,7 @@
   --brd:         #e8e8e8;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth;overflow-x:hidden;}
 body{font-family:'Barlow','Heebo',sans-serif;color:var(--text);overflow-x:hidden;}
 [dir=rtl] body,[dir=rtl] *{font-family:'Heebo','Barlow',sans-serif;}
 
@@ -123,7 +123,7 @@ nav.sc{box-shadow:0 4px 40px rgba(0,0,0,.5);}
 }
 .hero-logo-side{flex:0 0 auto;width:min(520px,50vw);}
 .hero-logo-side img{width:100%;height:auto;display:block;}
-.hero-text-side{flex:1;text-align:start;}
+.hero-text-side{flex:1;text-align:start;min-width:0;}
 /* ── BIG LOGO ── */
 .hero-logo-wrap{
   width:min(580px,82vw);
