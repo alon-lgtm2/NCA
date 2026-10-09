@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#c4194a">
+<title>NCA – Registration 2026–27</title>
+<meta property="og:title" content="NCA – Player registration 2026–27">
+<meta property="og:description" content="Netherlands Catchball Association – registration for the 2026–27 season.">
+<meta property="og:image" content="https://catchball.nl/oglogonca.png">
+<link rel="icon" type="image/png" href="/faviconnca.png">
+<link rel="apple-touch-icon" href="/faviconnca.png">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600;700;800&family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/nca-pages.css">
+</head>
+<body>
+
+<div class="preview" id="preview" hidden data-t="preview">Preview mode – registrations are not saved yet.</div>
+
+<div class="tb" role="navigation" aria-label="Language">
+  <button class="lb" data-lang="en">English</button>
+  <button class="lb" data-lang="he">עברית</button>
+  <button class="lb" data-lang="nl">Nederlands</button>
+</div>
+<header class="nv">
+  <a href="https://catchball.nl/"><img src="/_data/src/logowhitetranspbkg.svg" alt="Netherlands Catchball Association"></a>
+  <span class="nv-tag" data-t="nv.tag">Registration</span>
+</header>
+
+<section class="hero">
+  <span class="eyebrow" data-t="hero.eyebrow">Season 2026–27</span>
+  <h1 data-t="hero.title">Player Registration</h1>
+  <p data-t="hero.sub">Welcome to a new NCA season! Fill in this short form to secure your place on the team. It takes about two minutes.</p>
+</section>
+
+<main>
+<!-- ═════════════ FORM ═════════════ -->
+<form id="reg" novalidate autocomplete="on">
+
+  <!-- 01 About you -->
+  <div class="card">
+    <div class="sec-h"><span class="sec-n">01</span><h2 data-t="s1">About you</h2></div>
+
+    <div class="f" data-field="status">
+      <span class="lbl" id="l-status" data-t="status.l">Is this your first season with us?</span>
+      <div class="choices two" role="radiogroup" aria-labelledby="l-status">
+        <label class="choice"><input type="radio" name="status" value="new"><div><b data-t="status.new">I'm new</b><span data-t="status.new.s">My first season with NCA</span></div></label>
+        <label class="choice"><input type="radio" name="status" value="returning"><div><b data-t="status.ret">I'm returning</b><span data-t="status.ret.s">I played with NCA last season</span></div></label>
+      </div>
+      <div class="err" data-t="e.choose">Please choose one option</div>
+    </div>
+
+    <span class="hint" data-t="name.hint" style="margin-bottom:10px">Please write your name in Latin letters, as it appears on your bank account – this helps us match your payment.</span>
+    <div class="row2">
+      <div class="f" data-field="firstName">
+        <label for="firstName" data-t="first">First name</label>
+        <input type="text" id="firstName" name="firstName" autocomplete="given-name" autocapitalize="words" maxlength="60" dir="ltr">
+        <div class="err" data-t="e.latin">Please use Latin letters (a–z)</div>
+      </div>
+      <div class="f" data-field="lastName">
+        <label for="lastName" data-t="last">Last name</label>
+        <input type="text" id="lastName" name="lastName" autocomplete="family-name" autocapitalize="words" maxlength="60" dir="ltr">
+        <div class="err" data-t="e.latin">Please use Latin letters (a–z)</div>
+      </div>
+    </div>
+
+    <div class="f" data-field="phone">
+      <label for="phone" data-t="phone">Mobile number (WhatsApp)</label>
+      <span class="hint" data-t="phone.hint">Team updates and training schedules are shared in your team's WhatsApp group.</span>
+      <div class="phone">
+        <select id="prefix" name="prefix" aria-label="Country code">
+          <option value="+31">🇳🇱 +31</option>
+          <option value="+972">🇮🇱 +972</option>
+          <option value="+32">🇧🇪 +32</option>
+          <option value="+49">🇩🇪 +49</option>
+          <option value="+44">🇬🇧 +44</option>
+          <option value="+33">🇫🇷 +33</option>
+          <option value="+1">🇺🇸 +1</option>
+        </select>
+        <input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel-national" placeholder="6 12345678" maxlength="20">
+      </div>
+      <div class="err" data-t="e.phone">Please enter a valid phone number</div>
+    </div>
+
+    <div class="f" data-field="email">
+      <label for="email" data-t="email">Email</label>
+      <input type="email" id="email" name="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" maxlength="120" placeholder="name@example.com">
+      <div class="err" data-t="e.email">Please enter a valid email address</div>
+    </div>
+
+    <div class="f" data-field="dob">
+      <span class="lbl" id="l-dob" data-t="dob">Date of birth</span>
+      <span class="hint" data-t="dob.hint">For our member records – and so we can celebrate your birthday together.</span>
+      <div class="dob" role="group" aria-labelledby="l-dob">
+        <label><span class="sub" data-t="dob.d">Day</span><input type="number" id="dobD" inputmode="numeric" autocomplete="bday-day" min="1" max="31" placeholder="DD"></label>
+        <label><span class="sub" data-t="dob.m">Month</span><select id="dobM" autocomplete="bday-month"></select></label>
+        <label><span class="sub" data-t="dob.y">Year</span><input type="number" id="dobY" inputmode="numeric" autocomplete="bday-year" min="1930" placeholder="YYYY"></label>
+      </div>
+      <div class="err" data-t="e.dob">Please enter a valid date of birth</div>
+    </div>
+
+    <div class="f" data-field="city">
+      <label for="city" data-t="city">City / town where you live</label>
+      <span class="hint" data-t="city.hint">Helps us plan teams and training locations.</span>
+      <input type="text" id="city" name="city" list="cities" autocomplete="address-level2" maxlength="60" data-tp="city.ph" placeholder="e.g. Amstelveen" dir="ltr">
+      <datalist id="cities">
+        <option value="Amsterdam"><option value="Amstelveen"><option value="Ede"><option value="Hoofddorp">
+        <option value="Haarlem"><option value="Badhoevedorp"><option value="Aalsmeer"><option value="Uithoorn">
+        <option value="Diemen"><option value="Ouderkerk aan de Amstel"><option value="Almere"><option value="Utrecht">
+        <option value="Leiden"><option value="Den Haag"><option value="Rotterdam"><option value="Wageningen">
+        <option value="Bennekom"><option value="Veenendaal"><option value="Arnhem"><option value="Zaandam">
+      </datalist>
+      <div class="err" data-t="e.req">This field is required</div>
+    </div>
+
+    <div class="f" data-field="occupation" style="margin-bottom:0">
+      <label for="occupation"><span data-t="occ">What do you do?</span> <span class="opt" data-t="optional">(optional)</span></label>
+      <span class="hint" data-t="occ.hint">We love connecting and helping each other within our community.</span>
+      <input type="text" id="occupation" name="occupation" maxlength="100" data-tp="occ.ph" placeholder="e.g. Teacher, software developer, student">
+    </div>
+  </div>
+
+  <!-- 02 Season & payment -->
+  <div class="card">
+    <div class="sec-h"><span class="sec-n">02</span><h2 data-t="s2">Season &amp; payment</h2></div>
+    <div class="pay">
+      <div class="pay-top"><span class="pay-amt">€40</span><span class="pay-per" data-t="pay.per">per month</span></div>
+      <ul>
+        <li data-t="pay.b1">Registration is for the full 2026–27 season (August 2026 – July 2027).</li>
+        <li data-t="pay.b2">Paid in advance per period: September–December, January–April and May–July.</li>
+        <li data-t="pay.b3">Secure payment via bunq (iDEAL or credit card) to the association's treasurer.</li>
+        <li data-t="pay.b4">The price was updated from €35 to €40 per month due to higher hall and coaching costs.</li>
+      </ul>
+      <div class="pay-first" data-t="pay.first">First payment, right after registering: €160 for September–December 2026</div>
+    </div>
+    <p class="muted"><span data-t="pay.more">Insurance, holiday dates, cancellation policy and club rules:</span>
+      <a href="/register26-27/terms/" target="_blank" rel="noopener" data-keep-lang data-t="pay.link">Read the full terms ↗</a></p>
+  </div>
+
+  <!-- 03 Consent -->
+  <div class="card">
+    <div class="sec-h"><span class="sec-n">03</span><h2 data-t="s3">Consent</h2></div>
+
+    <div class="f" data-field="photo">
+      <span class="lbl" id="l-photo" data-t="photo">Photos &amp; videos</span>
+      <span class="hint" data-t="photo.hint">We sometimes take photos at trainings, tournaments and events for our website, social media and official materials. You can change your choice at any time.</span>
+      <div class="choices" role="radiogroup" aria-labelledby="l-photo">
+        <label class="choice"><input type="radio" name="photo" value="yes"><div><b data-t="photo.yes">Yes, you may use photos of me</b></div></label>
+        <label class="choice"><input type="radio" name="photo" value="no"><div><b data-t="photo.no">No, please don't use photos of me</b></div></label>
+      </div>
+      <div class="err" data-t="e.choose">Please choose one option</div>
+    </div>
+
+    <div class="f" data-field="terms">
+      <label class="choice"><input type="checkbox" id="terms" name="terms"><div><span data-th="terms.cb" style="color:var(--text);font-size:.92rem">I have read and agree to the participation terms, including the cancellation policy and the club rules, and I confirm that I have valid health insurance.</span></div></label>
+      <div class="err" data-t="e.terms">Please confirm to continue</div>
+    </div>
+
+    <p class="muted" data-th="privacy.line">We handle your details with care and use them only to run the association. Privacy statement</p>
+
+    <!-- honeypot: real players never see or fill this -->
+    <div class="sr-only" aria-hidden="true"><label>Website<input type="text" name="website" id="website" tabindex="-1" autocomplete="off"></label></div>
+  </div>
+
+  <div class="form-err" id="formErr" role="alert"></div>
+  <button type="submit" class="btn" id="submitBtn"><span class="spin"></span><span data-t="submit">Complete registration</span></button>
+  <p class="muted center" style="margin-top:8px" data-t="submit.next">Next: payment of the first period</p>
+  <div class="trust">
+    <span><svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4zm-1.4 15.4-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7z"/></svg><span data-t="trust.1">Official association · KVK 96604751</span></span>
+    <span><svg viewBox="0 0 24 24"><path d="M18 8h-1V6A5 5 0 0 0 7 6v2H6a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zM9 6a3 3 0 0 1 6 0v2H9V6z"/></svg><span data-t="trust.2">Your data is protected (GDPR)</span></span>
+  </div>
+</form>
+
+<!-- ═════════════ DONE ═════════════ -->
+<section id="done" hidden>
+  <div class="card center">
+    <div class="done-ic"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+    <div class="sec-h" style="justify-content:center;margin-bottom:6px"><h2 id="doneTitle" style="text-transform:none">You're registered!</h2></div>
+    <p class="lead" data-t="done.sub">Welcome to the 2026–27 season. One last step to secure your place:</p>
+    <ol class="steps" style="text-align:start">
+      <li class="done" data-t="step.1">Registration received</li>
+      <li id="stepPay" data-t="step.2">Pay €160 for September–December 2026</li>
+      <li data-t="step.3">Training details will follow in your team's WhatsApp group</li>
+    </ol>
+  </div>
+
+  <div class="card stack">
+    <a class="btn" id="payBtn" style="text-transform:none" href="https://bunq.me/o/4jvql9ApZmNzz06htVjxP3" target="_blank" rel="noopener noreferrer">
+      <span data-t="pay.btn">Pay €160 with bunq</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 3v2h3.6l-9.8 9.8 1.4 1.4L19 6.4V10h2V3h-7zM19 19H5V5h7V3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg>
+    </a>
+    <p class="muted center" data-t="pay.hint">Opens in a new tab · iDEAL or credit card · this page stays open</p>
+    <button type="button" class="btn ghost" id="paidBtn"><span class="spin"></span><span data-t="paid.btn">I've paid ✓</span></button>
+    <p class="muted center" data-t="paid.hint">Let us know once you've paid, so we can confirm it faster.</p>
+    <div class="paid-note" id="paidNote" role="status" data-t="paid.note">Thank you! We'll check the payment. See you on the court! 🏐</div>
+  </div>
+
+  <p class="muted center" data-th="help">Questions? Zohar · 06 1636 8283 · info@catchball.nl</p>
+  <p class="muted center" style="margin-top:10px"><a href="#" id="again" data-t="again">Register another player</a></p>
+</section>
+</main>
+
+<footer>
+  <p>
+    <a href="/register26-27/terms/" data-keep-lang data-t="f.terms">Participation terms</a>
+    <a href="/privacy/" data-keep-lang data-t="f.privacy">Privacy</a>
+    <a href="https://catchball.nl/">catchball.nl</a>
+  </p>
+  <p dir="ltr">© 2026 Netherlands Catchball Association (NCA) · KVK 96604751</p>
+</footer>
+
+<script>
+// ─── Backend: Google Apps Script web-app URL (empty = preview mode, nothing is saved) ───
+const ENDPOINT = '';
+const TERMS_VERSION = '2026-27-v1';
+const BUNQ_URL = 'https://bunq.me/o/4jvql9ApZmNzz06htVjxP3';
+
+const L_TERMS = 'href="/register26-27/terms/#terms" target="_blank" rel="noopener" data-keep-lang';
+const L_RULES = 'href="/register26-27/terms/#rules" target="_blank" rel="noopener" data-keep-lang';
+const L_PRIV  = 'href="/privacy/" target="_blank" rel="noopener" data-keep-lang';
+const HELP_LINKS = '<a href="https://wa.me/31616368283" target="_blank" rel="noopener" dir="ltr">06 1636 8283</a> · <a href="mailto:info@catchball.nl">info@catchball.nl</a>';
+
+window.T = {
+en: {
+  'page.title':'NCA – Registration 2026–27', preview:'Preview mode – registrations are not saved yet.',
+  'nv.tag':'Registration', 'hero.eyebrow':'Season 2026–27', 'hero.title':'Player Registration',
+  'hero.sub':'Welcome to a new NCA season! Fill in this short form to secure your place on the team. It takes about two minutes.',
+  s1:'About you', 'status.l':'Is this your first season with us?',
+  'status.new':"I'm new", 'status.new.s':'My first season with NCA', 'status.ret':"I'm returning", 'status.ret.s':'I played with NCA last season',
+  'name.hint':'Please write your name in Latin letters, as it appears on your bank account – this helps us match your payment.',
+  first:'First name', last:'Last name',
+  phone:'Mobile number (WhatsApp)', 'phone.hint':"Team updates and training schedules are shared in your team's WhatsApp group.",
+  email:'Email', dob:'Date of birth', 'dob.hint':'For our member records – and so we can celebrate your birthday together.',
+  'dob.d':'Day', 'dob.m':'Month', 'dob.y':'Year', 'dob.pick':'Month',
+  months:['January','February','March','April','May','June','July','August','September','October','November','December'],
+  city:'City / town where you live', 'city.hint':'Helps us plan teams and training locations.', 'city.ph':'e.g. Amstelveen',
+  occ:'What do you do?', optional:'(optional)', 'occ.hint':'We love connecting and helping each other within our community.', 'occ.ph':'e.g. Teacher, software developer, student',
+  s2:'Season & payment', 'pay.per':'per month',
+  'pay.b1':'Registration is for the full 2026–27 season (August 2026 – July 2027).',
+  'pay.b2':'Paid in advance per period: September–December, January–April and May–July.',
+  'pay.b3':"Secure payment via bunq (iDEAL or credit card) to the association's treasurer.",
+  'pay.b4':'The price was updated from €35 to €40 per month due to higher hall and coaching costs.',
+  'pay.first':'First payment, right after registering: €160 for September–December 2026',
+  'pay.more':'Insurance, holiday dates, cancellation policy and club rules:', 'pay.link':'Read the full terms ↗',
+  s3:'Consent', photo:'Photos & videos',
+  'photo.hint':'We sometimes take photos at trainings, tournaments and events for our website, social media and official materials. You can change your choice at any time.',
+  'photo.yes':'Yes, you may use photos of me', 'photo.no':"No, please don't use photos of me",
+  'terms.cb':`I have read and agree to the <a ${L_TERMS}>participation terms</a>, including the cancellation policy and the <a ${L_RULES}>club rules</a>, and I confirm that I have valid health insurance.`,
+  'privacy.line':`We handle your details with care and use them only to run the association. <a ${L_PRIV}>Privacy statement</a>`,
+  submit:'Complete registration', 'submit.next':'Next: payment of the first period',
+  'trust.1':'Official association · KVK 96604751', 'trust.2':'Your data is protected (GDPR)',
+  'e.req':'This field is required', 'e.latin':'Please use Latin letters (a–z)', 'e.email':'Please enter a valid email address',
+  'e.phone':'Please enter a valid phone number', 'e.dob':'Please enter a valid date of birth', 'e.choose':'Please choose one option',
+  'e.terms':'Please confirm to continue', 'e.form':'A few details are missing – please check the highlighted fields.',
+  'e.net':'Something went wrong while sending. Please try again, or message us on WhatsApp: 06 1636 8283.',
+  'done.title':"You're registered, {name}!", 'done.sub':'Welcome to the 2026–27 season. One last step to secure your place:',
+  'step.1':'Registration received', 'step.2':'Pay €160 for September–December 2026', 'step.3':"Training details will follow in your team's WhatsApp group",
+  'pay.btn':'Pay €160 with bunq', 'pay.hint':'Opens in a new tab · iDEAL or credit card · this page stays open',
+  'paid.btn':"I've paid ✓", 'paid.hint':"Let us know once you've paid, so we can confirm it faster.",
+  'paid.note':"Thank you! We'll check the payment. See you on the court! 🏐",
+  help:'Questions? Zohar · ' + HELP_LINKS, again:'Register another player',
+  'f.terms':'Participation terms', 'f.privacy':'Privacy'
+},
+he: {
+  'page.title':'NCA – הרשמה לעונת 2026–27', preview:'מצב תצוגה מקדימה – ההרשמות עדיין לא נשמרות.',
+  'nv.tag':'הרשמה', 'hero.eyebrow':'עונת \u20662026–27\u2069', 'hero.title':'הרשמת שחקניות',
+  'hero.sub':'ברוכה הבאה לעונה חדשה ב-NCA! מלאי את הטופס הקצר כדי להבטיח את מקומך בקבוצה. זה לוקח כשתי דקות.',
+  s1:'קצת עלייך', 'status.l':'זו העונה הראשונה שלך איתנו?',
+  'status.new':'אני חדשה', 'status.new.s':'העונה הראשונה שלי ב-NCA', 'status.ret':'אני ממשיכה', 'status.ret.s':'שיחקתי ב-NCA בעונה הקודמת',
+  'name.hint':'נא לכתוב את השם באותיות לועזיות, כפי שהוא מופיע בחשבון הבנק – כך נוכל לזהות את התשלום שלך.',
+  first:'שם פרטי', last:'שם משפחה',
+  phone:'טלפון נייד (וואטסאפ)', 'phone.hint':'עדכונים ולוח האימונים נשלחים בקבוצת הווטסאפ של הקבוצה שלך.',
+  email:'אימייל', dob:'תאריך לידה', 'dob.hint':'לרישום החברות בעמותה – וכדי שנוכל לחגוג יחד את יום ההולדת שלך.',
+  'dob.d':'יום', 'dob.m':'חודש', 'dob.y':'שנה', 'dob.pick':'חודש',
+  months:['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'],
+  city:'עיר / יישוב מגורים', 'city.hint':'עוזר לנו לתכנן קבוצות ומקומות אימון.', 'city.ph':'למשל Amstelveen',
+  occ:'במה את עוסקת?', optional:'(רשות)', 'occ.hint':'אנחנו אוהבות ליצור חיבורים ולעזור זו לזו בתוך הקהילה שלנו.', 'occ.ph':'למשל מורה, מפתחת תוכנה, סטודנטית',
+  s2:'העונה והתשלום', 'pay.per':'לחודש',
+  'pay.b1':'ההרשמה היא לעונה מלאה: אוגוסט 2026 – יולי 2027.',
+  'pay.b2':'התשלום מראש לכל תקופה: ספטמבר–דצמבר, ינואר–אפריל ומאי–יולי.',
+  'pay.b3':'תשלום מאובטח דרך bunq ‏(iDEAL או כרטיס אשראי) לגזברית העמותה.',
+  'pay.b4':'המחיר עודכן מ-35 € ל-40 € לחודש, בעקבות התייקרות האולמות והאימון.',
+  'pay.first':'התשלום הראשון, מיד אחרי ההרשמה: 160 € עבור ספטמבר–דצמבר 2026',
+  'pay.more':'ביטוח, תאריכי חופשות, מדיניות ביטולים ותקנון:', 'pay.link':'לתנאים המלאים ↗',
+  s3:'אישורים', photo:'תמונות וסרטונים',
+  'photo.hint':'מדי פעם אנחנו מצלמות באימונים, בטורנירים ובאירועים, לאתר, לרשתות החברתיות ולחומרים הרשמיים של העמותה. אפשר לשנות את הבחירה בכל עת.',
+  'photo.yes':'כן, אני מאשרת שימוש בתמונות שלי', 'photo.no':'לא, אני מבקשת שלא להשתמש בתמונות שלי',
+  'terms.cb':`קראתי ואני מאשרת את <a ${L_TERMS}>תנאי ההשתתפות</a>, כולל מדיניות הביטולים ו<a ${L_RULES}>תקנון העמותה</a>, ואני מאשרת שיש לי ביטוח בריאות בתוקף.`,
+  'privacy.line':`אנחנו שומרות על הפרטים שלך בקפידה ומשתמשות בהם רק לניהול העמותה. <a ${L_PRIV}>הצהרת פרטיות</a>`,
+  submit:'השלמת ההרשמה', 'submit.next':'בשלב הבא: תשלום התקופה הראשונה',
+  'trust.1':'עמותה רשומה · KVK 96604751', 'trust.2':'המידע שלך מוגן (GDPR)',
+  'e.req':'שדה חובה', 'e.latin':'נא לכתוב באותיות לועזיות (a–z)', 'e.email':'נא להזין כתובת אימייל תקינה',
+  'e.phone':'נא להזין מספר טלפון תקין', 'e.dob':'נא להזין תאריך לידה תקין', 'e.choose':'נא לבחור אפשרות',
+  'e.terms':'נא לאשר כדי להמשיך', 'e.form':'חסרים כמה פרטים – נא לבדוק את השדות המסומנים.',
+  'e.net':'משהו השתבש בשליחה. נסי שוב, או כתבי לנו בווטסאפ: \u206606 1636 8283\u2069.',
+  'done.title':'נרשמת בהצלחה, {name}!', 'done.sub':'ברוכה הבאה לעונת \u20662026–27\u2069. נשאר רק צעד אחד כדי להבטיח את מקומך:',
+  'step.1':'ההרשמה התקבלה', 'step.2':'תשלום 160 € עבור ספטמבר–דצמבר 2026', 'step.3':'פרטי האימונים יישלחו בקבוצת הווטסאפ של הקבוצה',
+  'pay.btn':'לתשלום 160 € ב-bunq', 'pay.hint':'ייפתח בלשונית חדשה · iDEAL או כרטיס אשראי · הדף הזה נשאר פתוח',
+  'paid.btn':'שילמתי ✓', 'paid.hint':'עדכני אותנו אחרי התשלום, כדי שנוכל לאשר אותו מהר יותר.',
+  'paid.note':'תודה! נבדוק את התשלום. נתראה במגרש! 🏐',
+  help:'שאלות? זהר · ' + HELP_LINKS, again:'הרשמה של שחקנית נוספת',
+  'f.terms':'תנאי השתתפות', 'f.privacy':'פרטיות'
+},
+nl: {
+  'page.title':'NCA – Inschrijving 2026–27', preview:'Voorbeeldmodus – inschrijvingen worden nog niet opgeslagen.',
+  'nv.tag':'Inschrijving', 'hero.eyebrow':'Seizoen 2026–27', 'hero.title':'Inschrijving speelsters',
+  'hero.sub':'Welkom bij een nieuw NCA-seizoen! Vul dit korte formulier in om je plek in het team vast te leggen. Het duurt ongeveer twee minuten.',
+  s1:'Over jou', 'status.l':'Is dit je eerste seizoen bij ons?',
+  'status.new':'Ik ben nieuw', 'status.new.s':'Mijn eerste seizoen bij NCA', 'status.ret':'Ik speel al', 'status.ret.s':'Ik speelde vorig seizoen bij NCA',
+  'name.hint':'Schrijf je naam in Latijnse letters, zoals op je bankrekening – zo kunnen we je betaling herkennen.',
+  first:'Voornaam', last:'Achternaam',
+  phone:'Mobiel nummer (WhatsApp)', 'phone.hint':'Updates en het trainingsschema delen we in de WhatsApp-groep van je team.',
+  email:'E-mailadres', dob:'Geboortedatum', 'dob.hint':'Voor onze ledenadministratie – en om samen je verjaardag te vieren.',
+  'dob.d':'Dag', 'dob.m':'Maand', 'dob.y':'Jaar', 'dob.pick':'Maand',
+  months:['januari','februari','maart','april','mei','juni','juli','augustus','september','oktober','november','december'],
+  city:'Woonplaats', 'city.hint':'Zo kunnen we teams en trainingslocaties beter plannen.', 'city.ph':'bijv. Amstelveen',
+  occ:'Wat doe je in het dagelijks leven?', optional:'(optioneel)', 'occ.hint':'We verbinden en helpen elkaar graag binnen onze community.', 'occ.ph':'bijv. docent, softwareontwikkelaar, student',
+  s2:'Seizoen & betaling', 'pay.per':'per maand',
+  'pay.b1':'Je schrijft je in voor het hele seizoen 2026–27 (augustus 2026 – juli 2027).',
+  'pay.b2':'Vooruitbetaling per periode: september–december, januari–april en mei–juli.',
+  'pay.b3':'Veilig betalen via bunq (iDEAL of creditcard) aan de penningmeester van de vereniging.',
+  'pay.b4':'De prijs is verhoogd van €35 naar €40 per maand vanwege hogere kosten voor zaalhuur en training.',
+  'pay.first':'Eerste betaling, direct na inschrijving: €160 voor september–december 2026',
+  'pay.more':'Verzekering, vakantiedata, annuleringsbeleid en huishoudelijk reglement:', 'pay.link':'Lees de volledige voorwaarden ↗',
+  s3:'Toestemming', photo:"Foto's & video's",
+  'photo.hint':"We maken soms foto's tijdens trainingen, toernooien en evenementen voor onze website, sociale media en officiële materialen. Je kunt je keuze altijd wijzigen.",
+  'photo.yes':"Ja, jullie mogen foto's van mij gebruiken", 'photo.no':"Nee, liever geen foto's van mij gebruiken",
+  'terms.cb':`Ik heb de <a ${L_TERMS}>deelnamevoorwaarden</a> (inclusief annuleringsbeleid) en het <a ${L_RULES}>huishoudelijk reglement</a> gelezen en ga ermee akkoord, en ik bevestig dat ik een geldige zorgverzekering heb.`,
+  'privacy.line':`We gaan zorgvuldig met je gegevens om en gebruiken ze alleen voor de verenigingsadministratie. <a ${L_PRIV}>Privacyverklaring</a>`,
+  submit:'Inschrijving afronden', 'submit.next':'Hierna: betaling van de eerste periode',
+  'trust.1':'Officiële vereniging · KVK 96604751', 'trust.2':'Je gegevens zijn beschermd (AVG)',
+  'e.req':'Dit veld is verplicht', 'e.latin':'Gebruik Latijnse letters (a–z)', 'e.email':'Vul een geldig e-mailadres in',
+  'e.phone':'Vul een geldig telefoonnummer in', 'e.dob':'Vul een geldige geboortedatum in', 'e.choose':'Kies een optie',
+  'e.terms':'Bevestig om verder te gaan', 'e.form':'Er ontbreken nog een paar gegevens – controleer de gemarkeerde velden.',
+  'e.net':'Er ging iets mis bij het versturen. Probeer het opnieuw, of stuur ons een WhatsApp: 06 1636 8283.',
+  'done.title':'Je bent ingeschreven, {name}!', 'done.sub':'Welkom in seizoen 2026–27. Nog één stap om je plek vast te leggen:',
+  'step.1':'Inschrijving ontvangen', 'step.2':'Betaal €160 voor september–december 2026', 'step.3':'Trainingsinformatie volgt in de WhatsApp-groep van je team',
+  'pay.btn':'Betaal €160 met bunq', 'pay.hint':'Opent in een nieuw tabblad · iDEAL of creditcard · deze pagina blijft open',
+  'paid.btn':'Ik heb betaald ✓', 'paid.hint':'Laat het ons weten als je hebt betaald, dan kunnen we het sneller bevestigen.',
+  'paid.note':'Dankjewel! We controleren de betaling. Tot op het veld! 🏐',
+  help:'Vragen? Zohar · ' + HELP_LINKS, again:'Nog een speelster inschrijven',
+  'f.terms':'Deelnamevoorwaarden', 'f.privacy':'Privacy'
+}};
+</script>
+<script src="/assets/nca-pages.js"></script>
+<script>
+(function () {
+  const $ = id => document.getElementById(id);
+  const form = $('reg'), done = $('done');
+  const t = k => NCA.t(k);
+  if (!ENDPOINT) $('preview').hidden = false;
+
+  // Month dropdown follows the page language
+  function fillMonths() {
+    const sel = $('dobM'), cur = sel.value;
+    sel.innerHTML = `<option value="">${t('dob.pick')}</option>` +
+      t('months').map((m, i) => `<option value="${i + 1}">${m}</option>`).join('');
+    sel.value = cur;
+  }
+  fillMonths();
+  document.addEventListener('nca:lang', () => { fillMonths(); renderDone(); });
+  $('dobY').max = new Date().getFullYear() - 10;
+
+  // ─── Validation ───
+  const LATIN = /^[A-Za-zÀ-ÖØ-öø-ÿĀ-ž' .\-]{1,60}$/;
+  const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const val = id => $(id).value.trim();
+  const radio = n => (form.querySelector(`input[name=${n}]:checked`) || {}).value || '';
+
+  function phoneFull() {
+    let n = val('phone').replace(/[\s\-().]/g, '');
+    if (n.startsWith('+')) return n;
+    if (n.startsWith('00')) return '+' + n.slice(2);
+    if (n.startsWith('0')) n = n.slice(1);
+    return $('prefix').value + n;
+  }
+  function dobISO() {
+    const d = +val('dobD'), m = +$('dobM').value, y = +val('dobY');
+    const dt = new Date(Date.UTC(y, m - 1, d));
+    const ok = y >= 1930 && y <= new Date().getFullYear() - 10 && dt.getUTCMonth() === m - 1 && dt.getUTCDate() === d;
+    return ok ? dt.toISOString().slice(0, 10) : '';
+  }
+  const checks = {
+    status: () => !!radio('status'),
+    firstName: () => LATIN.test(val('firstName')),
+    lastName: () => LATIN.test(val('lastName')),
+    phone: () => /^\+\d{8,15}$/.test(phoneFull()),
+    email: () => EMAIL.test(val('email')),
+    dob: () => !!dobISO(),
+    city: () => val('city').length >= 2,
+    photo: () => !!radio('photo'),
+    terms: () => $('terms').checked
+  };
+  function mark(name) {
+    const ok = checks[name]();
+    form.querySelector(`[data-field=${name}]`).classList.toggle('invalid', !ok);
+    return ok;
+  }
+  // Re-check a field once the player touches it after a failed attempt
+  form.addEventListener('input', e => { const f = e.target.closest('[data-field]'); if (f && f.classList.contains('invalid')) mark(f.dataset.field); });
+  form.addEventListener('change', e => { const f = e.target.closest('[data-field]'); if (f && f.classList.contains('invalid')) mark(f.dataset.field); });
+
+  // ─── Backend calls ───
+  async function post(payload) {
+    if (!ENDPOINT) { await new Promise(r => setTimeout(r, 700)); return { ok: true, id: 'PREVIEW-' + Date.now().toString(36).toUpperCase() }; }
+    const r = await fetch(ENDPOINT, { method: 'POST', body: JSON.stringify(payload) }); // text/plain: no CORS preflight
+    return r.json();
+  }
+
+  // ─── Submit ───
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const bad = Object.keys(checks).filter(n => !mark(n));
+    const fe = $('formErr');
+    if (bad.length) {
+      fe.textContent = t('e.form'); fe.classList.add('show');
+      form.querySelector(`[data-field=${bad[0]}]`).scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    fe.classList.remove('show');
+    const btn = $('submitBtn'); btn.disabled = true; btn.classList.add('loading');
+    const data = {
+      action: 'register', lang: NCA.lang, status: radio('status'),
+      firstName: val('firstName'), lastName: val('lastName'), phone: phoneFull(), email: val('email').toLowerCase(),
+      dob: dobISO(), city: val('city'), occupation: val('occupation'),
+      photoConsent: radio('photo'), termsAccepted: true, termsVersion: TERMS_VERSION, website: val('website')
+    };
+    try {
+      const res = await post(data);
+      if (!res || !res.ok) throw new Error(res && res.error);
+      const s = { id: res.id, name: data.firstName, paid: false };
+      try { sessionStorage.setItem('nca_reg', JSON.stringify(s)); } catch (_) {}
+      showDone(s);
+    } catch (err) {
+      fe.textContent = t('e.net'); fe.classList.add('show');
+    } finally { btn.disabled = false; btn.classList.remove('loading'); }
+  });
+
+  // ─── Done screen ───
+  let state = null;
+  function renderDone() {
+    if (!state) return;
+    $('doneTitle').textContent = t('done.title').replace('{name}', state.name);
+    $('paidNote').classList.toggle('show', !!state.paid);
+    $('stepPay').classList.toggle('done', !!state.paid);
+    $('paidBtn').hidden = !!state.paid;
+  }
+  function showDone(s) {
+    state = s; form.hidden = true; done.hidden = false; renderDone();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  $('payBtn').addEventListener('click', () => {
+    if (ENDPOINT && state) fetch(ENDPOINT, { method: 'POST', body: JSON.stringify({ action: 'payclick', id: state.id }), keepalive: true }).catch(() => {});
+  });
+  $('paidBtn').addEventListener('click', async () => {
+    const b = $('paidBtn'); b.disabled = true; b.classList.add('loading');
+    try { await post({ action: 'paid', id: state.id }); } catch (_) {}
+    state.paid = true;
+    try { sessionStorage.setItem('nca_reg', JSON.stringify(state)); } catch (_) {}
+    b.disabled = false; b.classList.remove('loading'); renderDone();
+  });
+  $('again').addEventListener('click', e => {
+    e.preventDefault();
+    try { sessionStorage.removeItem('nca_reg'); } catch (_) {}
+    state = null; form.reset(); fillMonths(); done.hidden = true; form.hidden = false; window.scrollTo({ top: 0 });
+  });
+  // Coming back to the tab (e.g. after reload) keeps the payment step visible
+  try { const s = JSON.parse(sessionStorage.getItem('nca_reg')); if (s && s.id) showDone(s); } catch (_) {}
+})();
+</script>
+</body>
+</html>
