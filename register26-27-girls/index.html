@@ -78,13 +78,20 @@
     </div>
 
     <div class="f" data-field="city" style="margin-bottom:0">
-      <label for="city" data-t="city">City / town where she lives</label>
-      <input type="text" id="city" name="city" list="cities" autocomplete="address-level2" maxlength="60" data-tp="city.ph" placeholder="e.g. Hoofddorp" dir="ltr">
-      <datalist id="cities">
-        <option value="Hoofddorp"><option value="Amstelveen"><option value="Amsterdam"><option value="Haarlem">
-        <option value="Badhoevedorp"><option value="Nieuw-Vennep"><option value="Aalsmeer"><option value="Uithoorn">
-        <option value="Leiden"><option value="Den Haag"><option value="Utrecht">
-      </datalist>
+      <label for="citySel" data-t="city">City / town where she lives</label>
+      <select id="citySel" name="citySel">
+        <option value="" data-t="city.pick">Choose…</option>
+        <option>Amstelveen</option>
+        <option>Amsterdam</option>
+        <option>Ouderkerk aan de Amstel</option>
+        <option>Uithoorn</option>
+        <option>Aalsmeer</option>
+        <option>Badhoevedorp</option>
+        <option>Hoofddorp</option>
+        <option>Diemen</option>
+        <option value="other" data-t="city.other">Other…</option>
+      </select>
+      <input type="text" id="cityOther" name="cityOther" autocomplete="address-level2" maxlength="60" data-tp="city.ph" placeholder="Type the city / town" dir="ltr" style="margin-top:8px" hidden>
       <div class="err" data-t="e.req">This field is required</div>
     </div>
   </div>
@@ -130,7 +137,7 @@
     <div class="pay">
       <div class="pay-top"><span class="pay-amt">€30</span><span class="pay-per" data-t="pay.per">per month</span></div>
       <ul>
-        <li data-t="pay.b1">Training every Thursday, 19:00–20:30, in Hoofddorp.</li>
+        <li data-t="pay.b1">Training every Thursday, 19:00–20:30, in Amstelveen.</li>
         <li data-t="pay.b2">Registration is for the full 2026–27 season (August 2026 – July 2027).</li>
         <li data-t="pay.b3">Paid in advance per period: September–December, January–April and May–July.</li>
         <li data-t="pay.b4">Secure payment via Tikkie (iDEAL).</li>
@@ -184,7 +191,7 @@
     <ol class="steps" style="text-align:start">
       <li class="done" data-t="step.1">Registration received</li>
       <li id="stepPay" data-t="step.2">Pay €120 for September–December 2026</li>
-      <li data-t="step.3">Trainings: every Thursday, 19:00–20:30, in Hoofddorp</li>
+      <li data-t="step.3">Trainings: every Thursday, 19:00–20:30, in Amstelveen</li>
     </ol>
   </div>
 
@@ -235,11 +242,11 @@ en: {
   dob:'Date of birth', 'dob.hint':'For our member records – and so we can celebrate her birthday together.',
   'dob.d':'Day', 'dob.m':'Month', 'dob.y':'Year', 'dob.pick':'Month',
   months:['January','February','March','April','May','June','July','August','September','October','November','December'],
-  city:'City / town where she lives', 'city.ph':'e.g. Hoofddorp',
+  city:'City / town where she lives', 'city.pick':'Choose…', 'city.other':'Other…', 'city.ph':'Type the city / town',
   s2:'Parent / guardian', pname:'Your full name',
   phone:'Mobile number (WhatsApp)', 'phone.hint':'We use this number for updates about trainings.', email:'Email',
   s3:'Season & payment', 'pay.per':'per month',
-  'pay.b1':'Training every Thursday, 19:00–20:30, in Hoofddorp.',
+  'pay.b1':'Training every Thursday, 19:00–20:30, in Amstelveen.',
   'pay.b2':'Registration is for the full 2026–27 season (August 2026 – July 2027).',
   'pay.b3':'Paid in advance per period: September–December, January–April and May–July.',
   'pay.b4':'Secure payment via Tikkie (iDEAL).',
@@ -257,7 +264,7 @@ en: {
   'e.terms':'Please confirm to continue', 'e.form':'A few details are missing – please check the highlighted fields.',
   'e.net':'Something went wrong while sending. Please try again, or message us on WhatsApp: 06 1636 8283.',
   'done.title':'{name} is registered!', 'done.sub':'Welcome to the girls league 2026–27. One last step to secure her place:',
-  'step.1':'Registration received', 'step.2':'Pay €120 for September–December 2026', 'step.3':'Trainings: every Thursday, 19:00–20:30, in Hoofddorp',
+  'step.1':'Registration received', 'step.2':'Pay €120 for September–December 2026', 'step.3':'Trainings: every Thursday, 19:00–20:30, in Amstelveen',
   'pay.btn':'Pay €120 with Tikkie', 'pay.hint':"Opens in a new tab · please add your daughter's name in the message · this page stays open",
   'paid.btn':"I've paid ✓", 'paid.hint':"Let us know once you've paid, so we can confirm it faster.",
   'paid.note':"Thank you! We'll check the payment. See you on the court! 🏐",
@@ -275,11 +282,11 @@ he: {
   dob:'תאריך לידה', 'dob.hint':'לרישום החברות – וכדי שנוכל לחגוג איתה את יום ההולדת.',
   'dob.d':'יום', 'dob.m':'חודש', 'dob.y':'שנה', 'dob.pick':'חודש',
   months:['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'],
-  city:'עיר / יישוב מגורים', 'city.ph':'למשל Hoofddorp',
+  city:'עיר / יישוב מגורים', 'city.pick':'בחירה…', 'city.other':'אחר…', 'city.ph':'כתבו את שם העיר / היישוב',
   s2:'פרטי ההורה', pname:'שם מלא',
   phone:'טלפון נייד (וואטסאפ)', 'phone.hint':'במספר הזה נעדכן לגבי האימונים.', email:'אימייל',
   s3:'העונה והתשלום', 'pay.per':'לחודש',
-  'pay.b1':'אימון בכל יום חמישי, \u206619:00–20:30\u2069, בהאופדורפ.',
+  'pay.b1':'אימון בכל יום חמישי, \u206619:00–20:30\u2069, באמסטלפן.',
   'pay.b2':'ההרשמה היא לעונה מלאה: אוגוסט 2026 – יולי 2027.',
   'pay.b3':'התשלום מראש לכל תקופה: ספטמבר–דצמבר, ינואר–אפריל ומאי–יולי.',
   'pay.b4':'תשלום מאובטח דרך Tikkie ‏(iDEAL).',
@@ -297,7 +304,7 @@ he: {
   'e.terms':'נא לאשר כדי להמשיך', 'e.form':'חסרים כמה פרטים – נא לבדוק את השדות המסומנים.',
   'e.net':'משהו השתבש בשליחה. נסו שוב, או כתבו לנו בווטסאפ: ⁦06 1636 8283⁩.',
   'done.title':'{name} רשומה!', 'done.sub':'ברוכה הבאה לליגת הבנות. נשאר רק צעד אחד כדי להבטיח את מקומה:',
-  'step.1':'ההרשמה התקבלה', 'step.2':'תשלום 120 € עבור ספטמבר–דצמבר 2026', 'step.3':'אימונים: בכל יום חמישי, \u206619:00–20:30\u2069, בהאופדורפ',
+  'step.1':'ההרשמה התקבלה', 'step.2':'תשלום 120 € עבור ספטמבר–דצמבר 2026', 'step.3':'אימונים: בכל יום חמישי, \u206619:00–20:30\u2069, באמסטלפן',
   'pay.btn':'לתשלום 120 € ב-Tikkie', 'pay.hint':'ייפתח בלשונית חדשה · כתבו בהודעה את שם הבת · הדף הזה נשאר פתוח',
   'paid.btn':'שילמתי ✓', 'paid.hint':'עדכנו אותנו אחרי התשלום, כדי שנוכל לאשר אותו מהר יותר.',
   'paid.note':'תודה! נבדוק את התשלום. נתראה במגרש! 🏐',
@@ -315,11 +322,11 @@ nl: {
   dob:'Geboortedatum', 'dob.hint':'Voor onze ledenadministratie – en om samen haar verjaardag te vieren.',
   'dob.d':'Dag', 'dob.m':'Maand', 'dob.y':'Jaar', 'dob.pick':'Maand',
   months:['januari','februari','maart','april','mei','juni','juli','augustus','september','oktober','november','december'],
-  city:'Woonplaats', 'city.ph':'bijv. Hoofddorp',
+  city:'Woonplaats', 'city.pick':'Kies…', 'city.other':'Anders…', 'city.ph':'Typ de woonplaats',
   s2:'Ouder / verzorger', pname:'Je volledige naam',
   phone:'Mobiel nummer (WhatsApp)', 'phone.hint':'Via dit nummer houden we je op de hoogte over de trainingen.', email:'E-mailadres',
   s3:'Seizoen & betaling', 'pay.per':'per maand',
-  'pay.b1':'Elke donderdag training, 19:00–20:30, in Hoofddorp.',
+  'pay.b1':'Elke donderdag training, 19:00–20:30, in Amstelveen.',
   'pay.b2':'Inschrijving voor het hele seizoen 2026–27 (augustus 2026 – juli 2027).',
   'pay.b3':'Vooruitbetaling per periode: september–december, januari–april en mei–juli.',
   'pay.b4':'Veilig betalen via Tikkie (iDEAL).',
@@ -337,7 +344,7 @@ nl: {
   'e.terms':'Bevestig om verder te gaan', 'e.form':'Er ontbreken nog een paar gegevens – controleer de gemarkeerde velden.',
   'e.net':'Er ging iets mis bij het versturen. Probeer het opnieuw, of stuur ons een WhatsApp: 06 1636 8283.',
   'done.title':'{name} is ingeschreven!', 'done.sub':'Welkom bij de meisjescompetitie 2026–27. Nog één stap om haar plek vast te leggen:',
-  'step.1':'Inschrijving ontvangen', 'step.2':'Betaal €120 voor september–december 2026', 'step.3':'Trainingen: elke donderdag, 19:00–20:30, in Hoofddorp',
+  'step.1':'Inschrijving ontvangen', 'step.2':'Betaal €120 voor september–december 2026', 'step.3':'Trainingen: elke donderdag, 19:00–20:30, in Amstelveen',
   'pay.btn':'Betaal €120 met Tikkie', 'pay.hint':'Opent in een nieuw tabblad · zet de naam van je dochter in het bericht · deze pagina blijft open',
   'paid.btn':'Ik heb betaald ✓', 'paid.hint':'Laat het ons weten als je hebt betaald, dan kunnen we het sneller bevestigen.',
   'paid.note':'Dankjewel! We controleren de betaling. Tot op het veld! 🏐',
@@ -380,6 +387,13 @@ nl: {
     if (n.startsWith('0')) n = n.slice(1);
     return $('prefix').value + n;
   }
+  // City: pick from the list, or "Other" and type it
+  const cityValue = () => $('citySel').value === 'other' ? val('cityOther') : $('citySel').value;
+  $('citySel').addEventListener('change', () => {
+    const other = $('citySel').value === 'other';
+    $('cityOther').hidden = !other;
+    if (other) $('cityOther').focus();
+  });
   function dobISO() {
     const d = +val('dobD'), m = +$('dobM').value, y = +val('dobY');
     const dt = new Date(Date.UTC(y, m - 1, d));
@@ -391,7 +405,7 @@ nl: {
     firstName: () => LATIN.test(val('firstName')),
     lastName: () => LATIN.test(val('lastName')),
     dob: () => !!dobISO(),
-    city: () => val('city').length >= 2,
+    city: () => cityValue().length >= 2,
     parentName: () => val('parentName').length >= 2,
     phone: () => /^\+\d{8,15}$/.test(phoneFull()),
     email: () => EMAIL.test(val('email')),
@@ -427,7 +441,7 @@ nl: {
     const btn = $('submitBtn'); btn.disabled = true; btn.classList.add('loading');
     const data = {
       action: 'registerGirl', lang: NCA.lang, status: radio('status'),
-      firstName: val('firstName'), lastName: val('lastName'), dob: dobISO(), city: val('city'),
+      firstName: val('firstName'), lastName: val('lastName'), dob: dobISO(), city: cityValue(),
       parentName: val('parentName'), phone: phoneFull(), email: val('email').toLowerCase(),
       photoConsent: radio('photo'), termsAccepted: true, termsVersion: TERMS_VERSION, website: val('website')
     };
@@ -468,7 +482,7 @@ nl: {
   $('again').addEventListener('click', e => {
     e.preventDefault();
     try { sessionStorage.removeItem(KEY); } catch (_) {}
-    state = null; form.reset(); fillMonths(); done.hidden = true; form.hidden = false; window.scrollTo({ top: 0 });
+    state = null; form.reset(); fillMonths(); $('cityOther').hidden = true; done.hidden = true; form.hidden = false; window.scrollTo({ top: 0 });
   });
   try { const s = JSON.parse(sessionStorage.getItem(KEY)); if (s && s.id) showDone(s); } catch (_) {}
 })();
