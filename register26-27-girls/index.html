@@ -133,7 +133,7 @@
         <li data-t="pay.b1">Training every Thursday, 19:00–20:30, in Hoofddorp.</li>
         <li data-t="pay.b2">Registration is for the full 2026–27 season (August 2026 – July 2027).</li>
         <li data-t="pay.b3">Paid in advance per period: September–December, January–April and May–July.</li>
-        <li data-t="pay.b4">Secure payment via bunq (iDEAL or credit card) to the association's treasurer.</li>
+        <li data-t="pay.b4">Secure payment via Tikkie (iDEAL).</li>
       </ul>
       <div class="pay-first" data-t="pay.first">First payment, right after registering: €120 for September–December 2026</div>
     </div>
@@ -190,10 +190,10 @@
 
   <div class="card stack">
     <a class="btn" id="payBtn" href="#" target="_blank" rel="noopener noreferrer" style="text-transform:none">
-      <span data-t="pay.btn">Pay €120 with bunq</span>
+      <span data-t="pay.btn">Pay €120 with Tikkie</span>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 3v2h3.6l-9.8 9.8 1.4 1.4L19 6.4V10h2V3h-7zM19 19H5V5h7V3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg>
     </a>
-    <p class="muted center" data-t="pay.hint">Opens in a new tab · iDEAL or credit card · this page stays open</p>
+    <p class="muted center" data-t="pay.hint">Opens in a new tab · please add your daughter's name in the message · this page stays open</p>
     <button type="button" class="btn ghost" id="paidBtn"><span class="spin"></span><span data-t="paid.btn">I've paid ✓</span></button>
     <p class="muted center" data-t="paid.hint">Let us know once you've paid, so we can confirm it faster.</p>
     <div class="paid-note" id="paidNote" role="status" data-t="paid.note">Thank you! We'll check the payment. See you on the court! 🏐</div>
@@ -217,7 +217,7 @@
 // ─── Backend: Google Apps Script web-app URL (empty = preview mode, nothing is saved) ───
 const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxcKlpJ176_zgelGXwljc7SfLUn0IVKw5I26jazmvHk_T1X6NlwpDLPjNdkkoib2Bog/exec';
 const TERMS_VERSION = 'girls-2026-27-v1';
-const BUNQ_URL = ''; // [חסר: קישור bunq לנערות, 120 €]
+const PAY_URL = 'https://tikkie.me/pay/2ln7v9btl3qrm9o34qeb'; // Tikkie, €120 Sep–Dec 2026
 
 const L_TERMS = 'href="/register26-27-girls/terms/" target="_blank" rel="noopener" data-keep-lang';
 const L_PRIV  = 'href="/privacy/" target="_blank" rel="noopener" data-keep-lang';
@@ -242,7 +242,7 @@ en: {
   'pay.b1':'Training every Thursday, 19:00–20:30, in Hoofddorp.',
   'pay.b2':'Registration is for the full 2026–27 season (August 2026 – July 2027).',
   'pay.b3':'Paid in advance per period: September–December, January–April and May–July.',
-  'pay.b4':"Secure payment via bunq (iDEAL or credit card) to the association's treasurer.",
+  'pay.b4':'Secure payment via Tikkie (iDEAL).',
   'pay.first':'First payment, right after registering: €120 for September–December 2026',
   'pay.more':'Holiday dates, insurance and cancellation policy:', 'pay.link':'Read the full terms ↗',
   s4:'Consent', photo:'Photos & videos of your daughter',
@@ -258,7 +258,7 @@ en: {
   'e.net':'Something went wrong while sending. Please try again, or message us on WhatsApp: 06 1636 8283.',
   'done.title':'{name} is registered!', 'done.sub':'Welcome to the girls league 2026–27. One last step to secure her place:',
   'step.1':'Registration received', 'step.2':'Pay €120 for September–December 2026', 'step.3':'Trainings: every Thursday, 19:00–20:30, in Hoofddorp',
-  'pay.btn':'Pay €120 with bunq', 'pay.hint':'Opens in a new tab · iDEAL or credit card · this page stays open',
+  'pay.btn':'Pay €120 with Tikkie', 'pay.hint':"Opens in a new tab · please add your daughter's name in the message · this page stays open",
   'paid.btn':"I've paid ✓", 'paid.hint':"Let us know once you've paid, so we can confirm it faster.",
   'paid.note':"Thank you! We'll check the payment. See you on the court! 🏐",
   help:'Questions? Zohar · ' + HELP_LINKS, again:'Register another daughter',
@@ -282,7 +282,7 @@ he: {
   'pay.b1':'אימון בכל יום חמישי, \u206619:00–20:30\u2069, בהאופדורפ.',
   'pay.b2':'ההרשמה היא לעונה מלאה: אוגוסט 2026 – יולי 2027.',
   'pay.b3':'התשלום מראש לכל תקופה: ספטמבר–דצמבר, ינואר–אפריל ומאי–יולי.',
-  'pay.b4':'תשלום מאובטח דרך bunq ‏(iDEAL או כרטיס אשראי) לגזברית העמותה.',
+  'pay.b4':'תשלום מאובטח דרך Tikkie ‏(iDEAL).',
   'pay.first':'התשלום הראשון, מיד אחרי ההרשמה: 120 € עבור ספטמבר–דצמבר 2026',
   'pay.more':'תאריכי חופשות, ביטוח ומדיניות ביטולים:', 'pay.link':'לתנאים המלאים ↗',
   s4:'אישורים', photo:'תמונות וסרטונים של הבת',
@@ -298,7 +298,7 @@ he: {
   'e.net':'משהו השתבש בשליחה. נסו שוב, או כתבו לנו בווטסאפ: ⁦06 1636 8283⁩.',
   'done.title':'{name} רשומה!', 'done.sub':'ברוכה הבאה לליגת הבנות. נשאר רק צעד אחד כדי להבטיח את מקומה:',
   'step.1':'ההרשמה התקבלה', 'step.2':'תשלום 120 € עבור ספטמבר–דצמבר 2026', 'step.3':'אימונים: בכל יום חמישי, \u206619:00–20:30\u2069, בהאופדורפ',
-  'pay.btn':'לתשלום 120 € ב-bunq', 'pay.hint':'ייפתח בלשונית חדשה · iDEAL או כרטיס אשראי · הדף הזה נשאר פתוח',
+  'pay.btn':'לתשלום 120 € ב-Tikkie', 'pay.hint':'ייפתח בלשונית חדשה · כתבו בהודעה את שם הבת · הדף הזה נשאר פתוח',
   'paid.btn':'שילמתי ✓', 'paid.hint':'עדכנו אותנו אחרי התשלום, כדי שנוכל לאשר אותו מהר יותר.',
   'paid.note':'תודה! נבדוק את התשלום. נתראה במגרש! 🏐',
   help:'שאלות? זהר · ' + HELP_LINKS, again:'הרשמה של בת נוספת',
@@ -322,7 +322,7 @@ nl: {
   'pay.b1':'Elke donderdag training, 19:00–20:30, in Hoofddorp.',
   'pay.b2':'Inschrijving voor het hele seizoen 2026–27 (augustus 2026 – juli 2027).',
   'pay.b3':'Vooruitbetaling per periode: september–december, januari–april en mei–juli.',
-  'pay.b4':'Veilig betalen via bunq (iDEAL of creditcard) aan de penningmeester van de vereniging.',
+  'pay.b4':'Veilig betalen via Tikkie (iDEAL).',
   'pay.first':'Eerste betaling, direct na inschrijving: €120 voor september–december 2026',
   'pay.more':'Vakantiedata, verzekering en annuleringsbeleid:', 'pay.link':'Lees de volledige voorwaarden ↗',
   s4:'Toestemming', photo:"Foto's & video's van je dochter",
@@ -338,7 +338,7 @@ nl: {
   'e.net':'Er ging iets mis bij het versturen. Probeer het opnieuw, of stuur ons een WhatsApp: 06 1636 8283.',
   'done.title':'{name} is ingeschreven!', 'done.sub':'Welkom bij de meisjescompetitie 2026–27. Nog één stap om haar plek vast te leggen:',
   'step.1':'Inschrijving ontvangen', 'step.2':'Betaal €120 voor september–december 2026', 'step.3':'Trainingen: elke donderdag, 19:00–20:30, in Hoofddorp',
-  'pay.btn':'Betaal €120 met bunq', 'pay.hint':'Opent in een nieuw tabblad · iDEAL of creditcard · deze pagina blijft open',
+  'pay.btn':'Betaal €120 met Tikkie', 'pay.hint':'Opent in een nieuw tabblad · zet de naam van je dochter in het bericht · deze pagina blijft open',
   'paid.btn':'Ik heb betaald ✓', 'paid.hint':'Laat het ons weten als je hebt betaald, dan kunnen we het sneller bevestigen.',
   'paid.note':'Dankjewel! We controleren de betaling. Tot op het veld! 🏐',
   help:'Vragen? Zohar · ' + HELP_LINKS, again:'Nog een dochter inschrijven',
@@ -353,7 +353,7 @@ nl: {
   const t = k => NCA.t(k);
   const KEY = 'nca_reg_girls';
   if (!ENDPOINT) $('preview').hidden = false;
-  $('payBtn').href = BUNQ_URL || '#';
+  $('payBtn').href = PAY_URL;
 
   // Month dropdown follows the page language
   function fillMonths() {
